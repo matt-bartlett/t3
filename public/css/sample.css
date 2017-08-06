@@ -1,0 +1,122 @@
+html, body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+a, a:hover {
+	text-decoration: none;
+}
+
+.spotify_playlist {
+	overflow: hidden;
+    padding: 0px;
+    margin-bottom: 30px;
+    background-color: #eee;
+    font-family: 'Montserrat', sans-serif;
+    -webkit-box-shadow: 2px 2px 5px 0px rgba(217,217,217,1);
+    -moz-box-shadow: 2px 2px 5px 0px rgba(217,217,217,1);
+    box-shadow: 2px 2px 5px 0px rgba(217,217,217,1);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+.spotify_playlist .spotify_playlist_thumbnail > img {
+    width: 100%;
+}
+.spotify_playlist .spotify_playlist_information {
+    text-align: center;
+    padding: 10px;
+}
+.spotify_playlist .spotify_playlist_information h3 {
+    margin: 10px;
+}
+.spotify_playlist .spotify_playlist_icons {
+
+}
+.spotify_playlist .spotify_playlist_link {
+  -webkit-transition: color 300ms ease-out;
+  -moz-transition: color 300ms ease-out;
+  -o-transition: color 300ms ease-out;
+  transition: color 300ms ease-out;
+  color: #2980B9;
+}
+.spotify_playlist .spotify_playlist_link:hover {
+	color: #323A45;
+}
+.spotify_track {
+    margin-bottom: 10px;
+    border-radius: 6px;
+    background-color: #eee;
+    font-family: 'Montserrat', sans-serif;
+}
+.spotify_track_thumbnail {
+    float: left;
+    padding-right: 15px;
+}
+.spotify_track_thumbnail > img {
+    width: 60px;
+}
+.spotify_track_information {
+    float: left;
+}
+.spotify_track_information > * {
+    margin: 0;
+}
+.spotify_track_information .track-title {
+    margin-top: 5px;
+}
+.banner {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -o-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+    text-align: center;
+    height: 450px;
+    margin-bottom: 60px;
+    background-size: cover;
+    background: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.45)), url(https://i.ytimg.com/vi/AtdnWYqbMwc/maxresdefault.jpg) no-repeat center;
+    font-family: 'Montserrat', sans-serif;
+}
+.banner .banner-title {
+    color: #f9f9f9;
+    font-size: 3em;
+    text-transform: uppercase;
+}
+.banner .banner-details {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+.banner .banner-details .banner-span {
+    font-weight: 300;
+    color: #d4d4d4;
+    font-size: 1em;
+    margin: 22px 15px;
+    text-transform: uppercase;
+}
+.banner .btn {
+    -webkit-transition: all 200ms ease-out;
+    -moz-transition: all 200ms ease-out;
+    -o-transition: all 200ms ease-out;
+    transition: all 200ms ease-out;
+    text-transform: uppercase;
+}
+.banner .btn-default {
+	color: #d4d4d4;
+    border-color: #d4d4d4;
+    background-color: transparent;
+}
+.banner .btn-default:hover {
+    color: #fff;
+    border-color: #fff;
+    background-color: transparent;
+}
