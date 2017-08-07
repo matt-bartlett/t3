@@ -110,7 +110,7 @@ a, a:hover {
     height: 450px;
     margin-bottom: 50px;
     background-size: cover;
-    background: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.45)), url(https://i.ytimg.com/vi/AtdnWYqbMwc/maxresdefault.jpg) no-repeat center;
+    background: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.45)), url(/images/tomorrowland2017.jpg) no-repeat center;
 }
 .banner .banner-title {
     color: #f9f9f9;
