@@ -15,6 +15,9 @@
                         <a href="{{ route('playlists.show', $playlist->id) }}">
                             <div class="spotify_playlist_thumbnail">
                                 <img src="{{ $playlist->playlist_thumbnail_url }}">
+                                <div class="spotify_playlist_thumbnail_overlay">
+                                    <h3>{{ $playlist->name }}</h3>
+                                </div>
                             </div>
                         </a>
                     </div>
