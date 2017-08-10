@@ -11,5 +11,5 @@
 |
 */
 
-Route::get('/playlists', 'PlaylistController@index')->name('playlists.index');
-Route::get('/playlists/{playlist}', 'PlaylistController@show')->name('playlists.show');
+Route::get('/', 'PlaylistController@index')->name('playlists.index');
+Route::get('/{playlist}', 'PlaylistController@show')->name('playlists.show');

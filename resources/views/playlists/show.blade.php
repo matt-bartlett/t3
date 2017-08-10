@@ -10,10 +10,10 @@
 @endsection
 
 @section('content')
-    <div class="container tracks">
+    <div class="container-fluid tracks">
         <div class="row">
             @foreach ($playlist->tracks as $track)
-                <div class="col-md-8 col-md-offset-2">
+                <div class="col-md-8 col-md-offset-2 col-sm-12">
                     <div class="spotify_track clearfix">
                         <div class="spotify_track_thumbnail">
                             <img src="{{ $track->spotify_thumbnail_url }}">
