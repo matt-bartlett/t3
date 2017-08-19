@@ -30,7 +30,7 @@ class PlaylistController extends Controller
      */
     public function index()
     {
-        $playlists = $this->playlist->paginate(15);
+        $playlists = $this->playlist->latest()->paginate(15);
 
         if (request()->expectsJson()) {
             $playlists = fractal($playlists, new PlaylistTransformer)->toArray();

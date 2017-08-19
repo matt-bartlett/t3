@@ -17,6 +17,7 @@
                                 <img src="{{ $playlist->playlist_thumbnail_url }}">
                                 <div class="spotify_playlist_thumbnail_overlay">
                                     <h3>{{ $playlist->name }}</h3>
+                                    <span>{{ $playlist->owner_name }}</span>
                                 </div>
                             </div>
                         </a>

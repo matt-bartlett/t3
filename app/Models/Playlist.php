@@ -41,6 +41,27 @@ class Playlist extends Model
     }
 
     /**
+     * Since the Spotify API doesn't return the playlist creators name,
+     * we can create an additional model attribute which maps the
+     * Spotify User ID to a known creator name, if it exists.
+     *
+     * @return string
+     */
+    public function getOwnerNameAttribute()
+    {
+        $owners = [
+            '1196791157' => 'Matt Bartlett',
+            'robert.mark.jones' => 'Mark Jones'
+        ];
+
+        if (isset($owners[$this->owner_id])) {
+            return $owners[$this->owner_id];
+        }
+
+        return $this->owner_id;
+    }
+
+    /**
      * Calculate the total duration of all tracks within a playlist
      *
      * @return integer
