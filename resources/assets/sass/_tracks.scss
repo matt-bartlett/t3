@@ -1,0 +1,21 @@
+.spotify_track {
+    margin-bottom: 5px;
+    background-color: #e5e5e5;
+}
+.spotify_track_thumbnail {
+    float: left;
+    padding-right: 15px;
+}
+.spotify_track_thumbnail > img {
+    width: 60px;
+}
+.spotify_track_information {
+    float: left;
+    padding: 5px 0px;
+}
+.spotify_track_information > * {
+    margin: 0;
+}
+.spotify_track_information .track-title {
+    margin-top: 5px;
+}

@@ -4,8 +4,8 @@
             <h1 class="banner-title">{{ $title }}</h1>
             @if (isset($duration) && isset($tracks))
                 <div class="banner-details">
-                    <h3 class="banner-span"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;&nbsp;{{ $duration }} Minutes</h3>
-                    <h3 class="banner-span"><i class="fa fa-music" aria-hidden="true"></i>&nbsp;&nbsp;{{ $tracks }} Tracks</h3>
+                    <h3 class="banner-span"><span class="glyphicon glyphicon-time" aria-hidden="true"></span>&nbsp;&nbsp;{{ $duration }} Minutes</h3>
+                    <h3 class="banner-span"><span class="glyphicon glyphicon-music" aria-hidden="true"></span>&nbsp;&nbsp;{{ $tracks }} Tracks</h3>
                 </div>
             @endif
             @if (isset($return))
