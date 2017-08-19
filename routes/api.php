@@ -11,5 +11,5 @@
 |
 */
 
-Route::middleware('auth:api')->get('/playlists', 'PlaylistController@index');
-Route::middleware('auth:api')->get('/playlists/{playlist}', 'PlaylistController@show');
+Route::get('/playlists', 'PlaylistController@index');
+Route::get('/playlists/{playlist}', 'PlaylistController@show');
