@@ -34,6 +34,7 @@ class PlaylistTransformer extends TransformerAbstract
             'owner_profile_url' => $playlist->owner_profile_url,
             'playlist_url' => $playlist->playlist_url,
             'playlist_thumbnail_url' => $playlist->playlist_thumbnail_url,
+            'duration' => $playlist->duration
         ];
     }
 
