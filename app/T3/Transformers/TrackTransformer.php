@@ -18,10 +18,12 @@ class TrackTransformer extends TransformerAbstract
         return [
             'title' => $track->title,
             'album' => $track->album,
+            'artist' => $track->artist,
             'duration' => $track->duration,
             'spotify_track_id' => $track->spotify_track_id,
             'spotify_url' => $track->spotify_url,
-            'spotify_preview_url' => $track->spotify_preview_url
+            'spotify_preview_url' => $track->spotify_preview_url,
+            'spotify_thumbnail_url' => $track->spotify_thumbnail_url,
         ];
     }
 }
