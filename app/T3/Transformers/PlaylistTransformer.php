@@ -27,14 +27,14 @@ class PlaylistTransformer extends TransformerAbstract
     public function transform(Playlist $playlist)
     {
         return [
-            'id' => $playlist->id,
-            'name' => $playlist->name,
-            'owner' => $playlist->owner_id,
-            'duration' => $playlist->duration,
-            'owner_name' => $playlist->owner_name,
-            'playlist_url' => $playlist->playlist_url,
-            'owner_profile_url' => $playlist->owner_profile_url,
-            'playlist_thumbnail_url' => $playlist->playlist_thumbnail_url
+            'id' => (integer) $playlist->id,
+            'name' => (string) $playlist->name,
+            'owner' => (string) $playlist->owner_id,
+            'duration' => (integer) $playlist->duration,
+            'owner_name' => (string) $playlist->owner_name,
+            'playlist_url' => (string) $playlist->playlist_url,
+            'owner_profile_url' => (string) $playlist->owner_profile_url,
+            'playlist_thumbnail_url' => (string) $playlist->playlist_thumbnail_url
         ];
     }
 
