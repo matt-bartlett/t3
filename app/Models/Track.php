@@ -22,4 +22,24 @@ class Track extends Model
         'spotify_preview_url',
         'spotify_thumbnail_url'
     ];
+
+    /**
+     * Define an attribute on a Track to return its duration
+     *
+     * @return string
+     */
+    public function getDurationFormattedAttribute()
+    {
+        $duration = $this->duration;
+
+        $seconds = floor($duration / 1000) % 60;
+
+        if (strlen($seconds) == 1) {
+            $seconds = '0' . $seconds;
+        }
+
+        $minutes = floor(($duration / 1000) / 60) % 60;
+
+        return $minutes . ':' .$seconds;
+    }
 }

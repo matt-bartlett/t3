@@ -30,11 +30,11 @@ class PlaylistTransformer extends TransformerAbstract
             'id' => $playlist->id,
             'name' => $playlist->name,
             'owner' => $playlist->owner_id,
+            'duration' => $playlist->duration,
             'owner_name' => $playlist->owner_name,
-            'owner_profile_url' => $playlist->owner_profile_url,
             'playlist_url' => $playlist->playlist_url,
-            'playlist_thumbnail_url' => $playlist->playlist_thumbnail_url,
-            'duration' => $playlist->duration
+            'owner_profile_url' => $playlist->owner_profile_url,
+            'playlist_thumbnail_url' => $playlist->playlist_thumbnail_url
         ];
     }
 
