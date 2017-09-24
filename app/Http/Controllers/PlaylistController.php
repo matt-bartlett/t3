@@ -26,19 +26,15 @@ class PlaylistController extends Controller
      * Return paginated list of Playlists
      * Action divided to handle both Web & API calls
      *
-     * @return Illuminate\Http\Response|Illuminate\View\View
+     * @return Illuminate\Http\Response
      */
     public function index()
     {
         $playlists = $this->playlist->latest()->paginate(15);
 
-        if (request()->expectsJson()) {
-            $playlists = fractal($playlists, new PlaylistTransformer)->toArray();
+        $playlists = fractal($playlists, new PlaylistTransformer)->toArray();
 
-            return response()->json($playlists);
-        }
-
-        return view('playlists/index', compact('playlists'));
+        return response()->json($playlists);
     }
 
     /**
@@ -46,20 +42,16 @@ class PlaylistController extends Controller
      * Action divided to handle both Web & API calls
      *
      * @param integer $id
-     * @return Illuminate\Http\Response|Illuminate\View\View
+     * @return Illuminate\Http\Response
      */
     public function show($id)
     {
         $playlist = $this->playlist->findOrFail($id);
 
-        if (request()->expectsJson()) {
-            $playlist = fractal($playlist, new PlaylistTransformer)
-                ->includeTracks()
-                ->toArray();
+        $playlist = fractal($playlist, new PlaylistTransformer)
+            ->includeTracks()
+            ->toArray();
 
-            return response()->json($playlist);
-        }
-
-        return view('playlists/show', compact('playlist'));
+        return response()->json($playlist);
     }
 }
