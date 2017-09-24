@@ -11,14 +11,25 @@
 |
 */
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(App\User::class, function (Faker\Generator $faker) {
-    static $password;
-
+$factory->define(App\Models\Playlist::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
-        'email' => $faker->unique()->safeEmail,
-        'password' => $password ?: $password = bcrypt('secret'),
-        'remember_token' => str_random(10),
+        'owner_id' => $faker->userName,
+        'playlist_url' => $faker->domainName,
+        'owner_profile_url' => $faker->domainName,
+        'playlist_thumbnail_url' => $faker->domainName
+    ];
+});
+
+$factory->define(App\Models\Track::class, function (Faker\Generator $faker) {
+    return [
+        'title' => $faker->words(3, true),
+        'artist' => $faker->name,
+        'album' => $faker->words(3, true),
+        'duration' => $faker->randomNumber,
+        'spotify_track_id' => $faker->randomNumber,
+        'spotify_url' => $faker->domainName,
+        'spotify_preview_url' => $faker->domainName,
+        'spotify_thumbnail_url' => $faker->domainName
     ];
 });

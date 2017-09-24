@@ -45,12 +45,12 @@ class PlaylistController extends Controller
      * Return paginated list of Tracks for a specified Playlist
      * Action divided to handle both Web & API calls
      *
-     * @param App\Models\Playlist $playlist
+     * @param integer $id
      * @return Illuminate\Http\Response|Illuminate\View\View
      */
-    public function show(Playlist $playlist)
+    public function show($id)
     {
-        $playlist = $this->playlist->findOrFail($playlist->id);
+        $playlist = $this->playlist->findOrFail($id);
 
         if (request()->expectsJson()) {
             $playlist = fractal($playlist, new PlaylistTransformer)

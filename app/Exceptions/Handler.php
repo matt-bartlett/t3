@@ -4,7 +4,9 @@ namespace App\Exceptions;
 
 use Exception;
 use Illuminate\Auth\AuthenticationException;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 
 class Handler extends ExceptionHandler
 {
@@ -44,6 +46,17 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        // Set specific exceptions to he handled differently through the API.
+        // Other exception will be handled as normal.
+        if ($request->wantsJson()) {
+            if ($exception instanceof ModelNotFoundException) {
+                return response(['message' => 'Specified resource not found'], 404);
+            }
+            if ($exception instanceof MethodNotAllowedHttpException) {
+                return response(['message' => 'HTTP method forbidden on this resource'], 405);
+            }
+        }
+
         return parent::render($request, $exception);
     }
 

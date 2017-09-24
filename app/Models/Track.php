@@ -40,6 +40,6 @@ class Track extends Model
 
         $minutes = floor(($duration / 1000) / 60) % 60;
 
-        return $minutes . ':' .$seconds;
+        return $minutes . ':' . $seconds;
     }
 }
