@@ -15,7 +15,12 @@ Fetch a Playlist, with associated Tracks
 http://<domain>/api/playlists/$id
 ```
 
+Search for Tracks, Artists or Albums
+```php
+http://<domain>/api/search?q=<searchterm>
+```
+
 ### Things To Do (Nice to haves)
-- [ ] - Add Track/Artist/Album search endpoint
+- [ ] - Add Tests for Track/Artist/Album search endpoint
 - [ ] - Add an auth-guarded section for easily pulling playlists from Spotify
 - [ ] - Add an auth-guarded section of allowed Spotify users to have their playlists shown
