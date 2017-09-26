@@ -42,4 +42,18 @@ class Track extends Model
 
         return $minutes . ':' . $seconds;
     }
+
+    /**
+     * Scope a query to search for tracks matching the search term
+     *
+     * @param Illuminate\Database\Eloquent\Builder $query
+     * @param string $searchTerm
+     * @return Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeSearch($query, $searchTerm)
+    {
+        return $query->where('artist', 'like', '%' . $searchTerm . '%')
+            ->orWhere('album', 'like', '%' . $searchTerm . '%')
+            ->orWhere('title', 'like', '%' . $searchTerm . '%');
+    }
 }
