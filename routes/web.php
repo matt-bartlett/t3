@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('pages/index');
 });
+
+Auth::routes();
+
+Route::get('/admin', 'AdminController@index');
