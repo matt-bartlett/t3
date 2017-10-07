@@ -22,8 +22,8 @@ class CreateTracksTable extends Migration
             $table->integer('duration');
             $table->string('spotify_track_id');
             $table->string('spotify_url');
-            $table->string('spotify_preview_url');
-            $table->string('spotify_thumbnail_url');
+            $table->string('spotify_preview_url')->nullable();
+            $table->string('spotify_thumbnail_url')->nullable();
             $table->timestamps();
         });
     }
