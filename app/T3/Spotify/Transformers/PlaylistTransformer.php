@@ -2,7 +2,6 @@
 
 namespace App\T3\Spotify\Transformers;
 
-use DB;
 use stdClass;
 use App\Models\Track;
 use App\Models\Playlist;

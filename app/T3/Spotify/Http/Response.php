@@ -2,6 +2,7 @@
 
 namespace App\T3\Spotify\Http;
 
+use GuzzleHttp\Psr7\Response as GuzzleResponse;
 use App\T3\Spotify\Exceptions\SpotifyRequestException;
 
 class Response
@@ -14,7 +15,7 @@ class Response
      * @return stdClass
      * @throws App\T3\Spotify\Exceptions\SpotifyRequestException
      */
-    public function parse($response)
+    public function parse(GuzzleResponse $response)
     {
         $status = $response->getStatusCode();
 
@@ -32,9 +33,9 @@ class Response
      * Retrieve the data from the response
      *
      * @param GuzzleHttp\Psr7\Response $response
-     * @return array
+     * @return stdClass
      */
-    private function success($response)
+    private function success(GuzzleResponse $response)
     {
         $raw = $response->getBody()->getContents();
 

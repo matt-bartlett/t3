@@ -36,7 +36,7 @@ class Client
      *
      * @param string $userId
      * @param string $playlistId
-     * @return array
+     * @return stdClass
      */
     public function getPlaylist($userId, $playlistId)
     {
