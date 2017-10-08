@@ -66,15 +66,14 @@ class PlaylistController extends Controller
      */
     public function store(SpotifyPlaylistRequest $request)
     {
-        $userId = $request->get('spotify_user_id');
-        $playlistId = $request->get('spotify_playlist_id');
-
         try {
             // Fetch the Playlist from Spotify
-            $playlist = $this->spotify->getPlaylist($userId, $playlistId);
+            $playlist = $this->spotify->getPlaylist(
+                $request->get('spotify_user_id'),
+                $request->get('spotify_playlist_id')
+            );
             // Transform the Playlist to an array
             $playlist = $this->spotify->transform($playlist, new PlaylistTransformer);
-
             // Save the Playlist
             DB::transaction(function () use ($playlist) {
                 $playlist = $this->playlist->create($playlist)
@@ -82,9 +81,8 @@ class PlaylistController extends Controller
                     ->createMany($playlist['tracks']);
             });
 
-            return view('admin/playlists/create', compact('playlist'));
+            return redirect()->route('admin.playlists.index');
         } catch (Exception $e) {
-            dd($e);
             return back()->withErrors($e->getMessage());
         }
     }

@@ -14,7 +14,7 @@
                                 <td>Name</td>
                                 <td>Owner</td>
                                 <td>Tracks</td>
-                                <td></td>
+                                <td>Created</td>
                             </tr>
                         </thead>
                         <tbody>
@@ -24,7 +24,7 @@
                                     <td>{{ $playlist->name }}</td>
                                     <td>{{ $playlist->owner_name }}</td>
                                     <td>{{ $playlist->tracks->count() }}</td>
-                                    <td></td>
+                                    <td>{{ $playlist->created_at }}</td>
                                 </tr>
                             @endforeach
                         </tbody>
