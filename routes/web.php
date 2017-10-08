@@ -17,4 +17,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/admin', 'AdminController@index');
+Route::get('/admin', 'Admin\PlaylistController@index')->name('admin.playlists.index');
+Route::get('/admin/playlists', 'Admin\PlaylistController@create')->name('admin.playlists.create');
+Route::post('/admin/playlists', 'Admin\PlaylistController@store')->name('admin.playlists.store');

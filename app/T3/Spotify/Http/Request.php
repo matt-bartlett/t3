@@ -37,7 +37,7 @@ class Request
      * @param string $method
      * @param array $parameters
      * @param array $headers
-     * @return array
+     * @return stdClass
      */
     public function send($url, $method, $parameters = [], $headers = [])
     {
@@ -49,7 +49,10 @@ class Request
             $headers = array('headers' => $headers);
         }
 
-        $payload = array_merge($parameters, $headers);
+        // Set any configuration options for Guzzle
+        $config = array('http_errors' => false);
+
+        $payload = array_merge($parameters, $headers, $config);
 
         $response = $this->guzzleClient->request(
             $method, $url, $payload

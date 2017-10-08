@@ -46,7 +46,7 @@ class TransposeSpotifyResponse extends Command
      */
     public function handle()
     {
-        $playlistJson = file_get_contents(public_path() . '/playlist03:08-3.json');
+        $playlistJson = file_get_contents(app_path() . '/T3/Json/matt-2109.json');
         $playlistJson = json_decode($playlistJson);
 
         return $this->transposer->transpose($playlistJson);

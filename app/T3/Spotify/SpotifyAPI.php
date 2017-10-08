@@ -51,7 +51,7 @@ class SpotifyAPI
      *
      * @param string $userId
      * @param string $playlistId
-     * @return stdClass
+     * @return array
      */
     public function getPlaylist($userId, $playlistId)
     {

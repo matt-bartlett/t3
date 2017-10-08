@@ -1,0 +1,923 @@
+{
+  "collaborative" : false,
+  "description" : null,
+  "external_urls" : {
+    "spotify" : "http://open.spotify.com/user/robert.mark.jones/playlist/3BfOaVLsbk9v745eDk0jYH"
+  },
+  "followers" : {
+    "href" : null,
+    "total" : 1
+  },
+  "href" : "https://api.spotify.com/v1/users/robert.mark.jones/playlists/3BfOaVLsbk9v745eDk0jYH",
+  "id" : "3BfOaVLsbk9v745eDk0jYH",
+  "images" : [ {
+    "height" : 640,
+    "url" : "https://mosaic.scdn.co/640/fd600e2f6aed009ca3e891d49eaac2c36ab9c11da9f4162f7928732d7c265c13c99e3828b01751b5471f1eef90d7a2bec771ea833165b6512bebf48765fe39bab0fa339baba1761d26e3f37d67334d0a",
+    "width" : 640
+  }, {
+    "height" : 300,
+    "url" : "https://mosaic.scdn.co/300/fd600e2f6aed009ca3e891d49eaac2c36ab9c11da9f4162f7928732d7c265c13c99e3828b01751b5471f1eef90d7a2bec771ea833165b6512bebf48765fe39bab0fa339baba1761d26e3f37d67334d0a",
+    "width" : 300
+  }, {
+    "height" : 60,
+    "url" : "https://mosaic.scdn.co/60/fd600e2f6aed009ca3e891d49eaac2c36ab9c11da9f4162f7928732d7c265c13c99e3828b01751b5471f1eef90d7a2bec771ea833165b6512bebf48765fe39bab0fa339baba1761d26e3f37d67334d0a",
+    "width" : 60
+  } ],
+  "name" : "21/09/17 TTT Playlist",
+  "owner" : {
+    "external_urls" : {
+      "spotify" : "http://open.spotify.com/user/robert.mark.jones"
+    },
+    "href" : "https://api.spotify.com/v1/users/robert.mark.jones",
+    "id" : "robert.mark.jones",
+    "type" : "user",
+    "uri" : "spotify:user:robert.mark.jones"
+  },
+  "public" : false,
+  "snapshot_id" : "eSr7CqDUqQ3LoPZ4vxG7AxdV3gtMCC5+9VWGB/7Azs63JRhgezDNJRlEVd+BhEMJ",
+  "tracks" : {
+    "href" : "https://api.spotify.com/v1/users/robert.mark.jones/playlists/3BfOaVLsbk9v745eDk0jYH/tracks?offset=0&limit=100",
+    "items" : [ {
+      "added_at" : "2017-09-20T08:15:57Z",
+      "added_by" : {
+        "external_urls" : {
+          "spotify" : "http://open.spotify.com/user/robert.mark.jones"
+        },
+        "href" : "https://api.spotify.com/v1/users/robert.mark.jones",
+        "id" : "robert.mark.jones",
+        "type" : "user",
+        "uri" : "spotify:user:robert.mark.jones"
+      },
+      "is_local" : false,
+      "track" : {
+        "album" : {
+          "album_type" : "single",
+          "artists" : [ {
+            "external_urls" : {
+              "spotify" : "https://open.spotify.com/artist/1XNbo9kVUmKXUptNhVSu49"
+            },
+            "href" : "https://api.spotify.com/v1/artists/1XNbo9kVUmKXUptNhVSu49",
+            "id" : "1XNbo9kVUmKXUptNhVSu49",
+            "name" : "Rat & Co",
+            "type" : "artist",
+            "uri" : "spotify:artist:1XNbo9kVUmKXUptNhVSu49"
+          } ],
+          "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "JP", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TH", "TR", "TW", "US", "UY", "VN" ],
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/album/5AEFX1GYF4H3RLcP4ihSIt"
+          },
+          "href" : "https://api.spotify.com/v1/albums/5AEFX1GYF4H3RLcP4ihSIt",
+          "id" : "5AEFX1GYF4H3RLcP4ihSIt",
+          "images" : [ {
+            "height" : 640,
+            "url" : "https://i.scdn.co/image/fd600e2f6aed009ca3e891d49eaac2c36ab9c11d",
+            "width" : 640
+          }, {
+            "height" : 300,
+            "url" : "https://i.scdn.co/image/a98276c2ab8c07bb9544fdd80f9f8f3d90872955",
+            "width" : 300
+          }, {
+            "height" : 64,
+            "url" : "https://i.scdn.co/image/d8649d825eb0689ba1b3b184ec5fe8d39b0ffb62",
+            "width" : 64
+          } ],
+          "name" : "Spring I & II",
+          "type" : "album",
+          "uri" : "spotify:album:5AEFX1GYF4H3RLcP4ihSIt"
+        },
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/1XNbo9kVUmKXUptNhVSu49"
+          },
+          "href" : "https://api.spotify.com/v1/artists/1XNbo9kVUmKXUptNhVSu49",
+          "id" : "1XNbo9kVUmKXUptNhVSu49",
+          "name" : "Rat & Co",
+          "type" : "artist",
+          "uri" : "spotify:artist:1XNbo9kVUmKXUptNhVSu49"
+        } ],
+        "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "JP", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TH", "TR", "TW", "US", "UY", "VN" ],
+        "disc_number" : 1,
+        "duration_ms" : 224301,
+        "explicit" : false,
+        "external_ids" : {
+          "isrc" : "AUSLG1500004"
+        },
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/2EI4Z75iR9LT8SBudN97Q5"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/2EI4Z75iR9LT8SBudN97Q5",
+        "id" : "2EI4Z75iR9LT8SBudN97Q5",
+        "name" : "Spring II",
+        "popularity" : 31,
+        "preview_url" : "https://p.scdn.co/mp3-preview/cc0c654acb048fbe88e1de6accafcc7fdb4e2dda?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 2,
+        "type" : "track",
+        "uri" : "spotify:track:2EI4Z75iR9LT8SBudN97Q5"
+      }
+    }, {
+      "added_at" : "2017-09-21T08:20:17Z",
+      "added_by" : {
+        "external_urls" : {
+          "spotify" : "http://open.spotify.com/user/robert.mark.jones"
+        },
+        "href" : "https://api.spotify.com/v1/users/robert.mark.jones",
+        "id" : "robert.mark.jones",
+        "type" : "user",
+        "uri" : "spotify:user:robert.mark.jones"
+      },
+      "is_local" : false,
+      "track" : {
+        "album" : {
+          "album_type" : "single",
+          "artists" : [ {
+            "external_urls" : {
+              "spotify" : "https://open.spotify.com/artist/1tuNwD6jDgtcTWWkoh7CHy"
+            },
+            "href" : "https://api.spotify.com/v1/artists/1tuNwD6jDgtcTWWkoh7CHy",
+            "id" : "1tuNwD6jDgtcTWWkoh7CHy",
+            "name" : "Lower Spectrum",
+            "type" : "artist",
+            "uri" : "spotify:artist:1tuNwD6jDgtcTWWkoh7CHy"
+          } ],
+          "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "JP", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TH", "TR", "TW", "US", "UY", "VN" ],
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/album/3ldZdI7sJrNbvmibNVFKUV"
+          },
+          "href" : "https://api.spotify.com/v1/albums/3ldZdI7sJrNbvmibNVFKUV",
+          "id" : "3ldZdI7sJrNbvmibNVFKUV",
+          "images" : [ {
+            "height" : 640,
+            "url" : "https://i.scdn.co/image/a9f4162f7928732d7c265c13c99e3828b01751b5",
+            "width" : 640
+          }, {
+            "height" : 300,
+            "url" : "https://i.scdn.co/image/2cb92892bb1ba83f428a078c3b458d66f6e0dfd5",
+            "width" : 300
+          }, {
+            "height" : 64,
+            "url" : "https://i.scdn.co/image/a660dd814eff62a03fb56f7639144b78e24a8b71",
+            "width" : 64
+          } ],
+          "name" : "Proxima",
+          "type" : "album",
+          "uri" : "spotify:album:3ldZdI7sJrNbvmibNVFKUV"
+        },
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/1tuNwD6jDgtcTWWkoh7CHy"
+          },
+          "href" : "https://api.spotify.com/v1/artists/1tuNwD6jDgtcTWWkoh7CHy",
+          "id" : "1tuNwD6jDgtcTWWkoh7CHy",
+          "name" : "Lower Spectrum",
+          "type" : "artist",
+          "uri" : "spotify:artist:1tuNwD6jDgtcTWWkoh7CHy"
+        } ],
+        "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "JP", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TH", "TR", "TW", "US", "UY", "VN" ],
+        "disc_number" : 1,
+        "duration_ms" : 313481,
+        "explicit" : false,
+        "external_ids" : {
+          "isrc" : "AUWA01500426"
+        },
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/7gsDVSpTMDWxNYVya3V9VM"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/7gsDVSpTMDWxNYVya3V9VM",
+        "id" : "7gsDVSpTMDWxNYVya3V9VM",
+        "name" : "Proxima",
+        "popularity" : 36,
+        "preview_url" : "https://p.scdn.co/mp3-preview/2c2d4e6d146b03bd816a5d1345c4ae6407460f27?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 1,
+        "type" : "track",
+        "uri" : "spotify:track:7gsDVSpTMDWxNYVya3V9VM"
+      }
+    }, {
+      "added_at" : "2017-09-20T08:16:29Z",
+      "added_by" : {
+        "external_urls" : {
+          "spotify" : "http://open.spotify.com/user/robert.mark.jones"
+        },
+        "href" : "https://api.spotify.com/v1/users/robert.mark.jones",
+        "id" : "robert.mark.jones",
+        "type" : "user",
+        "uri" : "spotify:user:robert.mark.jones"
+      },
+      "is_local" : false,
+      "track" : {
+        "album" : {
+          "album_type" : "album",
+          "artists" : [ {
+            "external_urls" : {
+              "spotify" : "https://open.spotify.com/artist/2D9Oe8R9UhbMvFAsMJpXj0"
+            },
+            "href" : "https://api.spotify.com/v1/artists/2D9Oe8R9UhbMvFAsMJpXj0",
+            "id" : "2D9Oe8R9UhbMvFAsMJpXj0",
+            "name" : "Kölsch",
+            "type" : "artist",
+            "uri" : "spotify:artist:2D9Oe8R9UhbMvFAsMJpXj0"
+          } ],
+          "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "JP", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TH", "TR", "TW", "US", "UY", "VN" ],
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/album/31bHWGxXkpup6zbPdNjhPy"
+          },
+          "href" : "https://api.spotify.com/v1/albums/31bHWGxXkpup6zbPdNjhPy",
+          "id" : "31bHWGxXkpup6zbPdNjhPy",
+          "images" : [ {
+            "height" : 640,
+            "url" : "https://i.scdn.co/image/471f1eef90d7a2bec771ea833165b6512bebf487",
+            "width" : 640
+          }, {
+            "height" : 300,
+            "url" : "https://i.scdn.co/image/a766050fc046cc659b4463c3dc53de5027ef46ae",
+            "width" : 300
+          }, {
+            "height" : 64,
+            "url" : "https://i.scdn.co/image/96284930a065165716b0a14ce8add25e13ec2b1f",
+            "width" : 64
+          } ],
+          "name" : "1983",
+          "type" : "album",
+          "uri" : "spotify:album:31bHWGxXkpup6zbPdNjhPy"
+        },
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/2D9Oe8R9UhbMvFAsMJpXj0"
+          },
+          "href" : "https://api.spotify.com/v1/artists/2D9Oe8R9UhbMvFAsMJpXj0",
+          "id" : "2D9Oe8R9UhbMvFAsMJpXj0",
+          "name" : "Kölsch",
+          "type" : "artist",
+          "uri" : "spotify:artist:2D9Oe8R9UhbMvFAsMJpXj0"
+        }, {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/3vAZRzjco8xKk2NbT5BQ6A"
+          },
+          "href" : "https://api.spotify.com/v1/artists/3vAZRzjco8xKk2NbT5BQ6A",
+          "id" : "3vAZRzjco8xKk2NbT5BQ6A",
+          "name" : "Tomas Høffding",
+          "type" : "artist",
+          "uri" : "spotify:artist:3vAZRzjco8xKk2NbT5BQ6A"
+        } ],
+        "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "JP", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TH", "TR", "TW", "US", "UY", "VN" ],
+        "disc_number" : 1,
+        "duration_ms" : 350813,
+        "explicit" : false,
+        "external_ids" : {
+          "isrc" : "DEU671500167"
+        },
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/1GyLXvaWJ0dlugN99u4kKb"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/1GyLXvaWJ0dlugN99u4kKb",
+        "id" : "1GyLXvaWJ0dlugN99u4kKb",
+        "name" : "Bloodline feat. Tomas Høffding",
+        "popularity" : 50,
+        "preview_url" : "https://p.scdn.co/mp3-preview/8c2cc76af28a1533d72dcd5f46ed3109488255e1?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 10,
+        "type" : "track",
+        "uri" : "spotify:track:1GyLXvaWJ0dlugN99u4kKb"
+      }
+    }, {
+      "added_at" : "2017-09-20T08:20:23Z",
+      "added_by" : {
+        "external_urls" : {
+          "spotify" : "http://open.spotify.com/user/robert.mark.jones"
+        },
+        "href" : "https://api.spotify.com/v1/users/robert.mark.jones",
+        "id" : "robert.mark.jones",
+        "type" : "user",
+        "uri" : "spotify:user:robert.mark.jones"
+      },
+      "is_local" : false,
+      "track" : {
+        "album" : {
+          "album_type" : "album",
+          "artists" : [ {
+            "external_urls" : {
+              "spotify" : "https://open.spotify.com/artist/3qwabfaWewpfli7hMNM3O8"
+            },
+            "href" : "https://api.spotify.com/v1/artists/3qwabfaWewpfli7hMNM3O8",
+            "id" : "3qwabfaWewpfli7hMNM3O8",
+            "name" : "Róisín Murphy",
+            "type" : "artist",
+            "uri" : "spotify:artist:3qwabfaWewpfli7hMNM3O8"
+          } ],
+          "available_markets" : [ ],
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/album/7xgKwtKW2HgbjoMhdvJVpG"
+          },
+          "href" : "https://api.spotify.com/v1/albums/7xgKwtKW2HgbjoMhdvJVpG",
+          "id" : "7xgKwtKW2HgbjoMhdvJVpG",
+          "images" : [ {
+            "height" : 640,
+            "url" : "https://i.scdn.co/image/b4a4958f0a4fd4ef8def7c1cad38ab00c423ef12",
+            "width" : 640
+          }, {
+            "height" : 300,
+            "url" : "https://i.scdn.co/image/6e3976c5f3f0e14d4a86673ae975b52874ea74bd",
+            "width" : 300
+          }, {
+            "height" : 64,
+            "url" : "https://i.scdn.co/image/c7e7884bf1760c83509fd8b00a9b206855af371c",
+            "width" : 64
+          } ],
+          "name" : "Unputdownable",
+          "type" : "album",
+          "uri" : "spotify:album:7xgKwtKW2HgbjoMhdvJVpG"
+        },
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/3qwabfaWewpfli7hMNM3O8"
+          },
+          "href" : "https://api.spotify.com/v1/artists/3qwabfaWewpfli7hMNM3O8",
+          "id" : "3qwabfaWewpfli7hMNM3O8",
+          "name" : "Róisín Murphy",
+          "type" : "artist",
+          "uri" : "spotify:artist:3qwabfaWewpfli7hMNM3O8"
+        } ],
+        "available_markets" : [ ],
+        "disc_number" : 1,
+        "duration_ms" : 431435,
+        "explicit" : false,
+        "external_ids" : {
+          "isrc" : "GBENL1501455"
+        },
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/2JjircKfhiHtIZPKJ95kBw"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/2JjircKfhiHtIZPKJ95kBw",
+        "id" : "2JjircKfhiHtIZPKJ95kBw",
+        "name" : "Unputdownable - Tom Demac Remix",
+        "popularity" : 29,
+        "preview_url" : null,
+        "track_number" : 2,
+        "type" : "track",
+        "uri" : "spotify:track:2JjircKfhiHtIZPKJ95kBw"
+      }
+    }, {
+      "added_at" : "2017-09-21T08:37:07Z",
+      "added_by" : {
+        "external_urls" : {
+          "spotify" : "http://open.spotify.com/user/robert.mark.jones"
+        },
+        "href" : "https://api.spotify.com/v1/users/robert.mark.jones",
+        "id" : "robert.mark.jones",
+        "type" : "user",
+        "uri" : "spotify:user:robert.mark.jones"
+      },
+      "is_local" : false,
+      "track" : {
+        "album" : {
+          "album_type" : "single",
+          "artists" : [ {
+            "external_urls" : {
+              "spotify" : "https://open.spotify.com/artist/5JQljNQvDpk1hhKpJHpwNU"
+            },
+            "href" : "https://api.spotify.com/v1/artists/5JQljNQvDpk1hhKpJHpwNU",
+            "id" : "5JQljNQvDpk1hhKpJHpwNU",
+            "name" : "Klimeks",
+            "type" : "artist",
+            "uri" : "spotify:artist:5JQljNQvDpk1hhKpJHpwNU"
+          } ],
+          "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "JP", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TH", "TR", "TW", "US", "UY", "VN" ],
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/album/31p1zDTEJMfGJX942k0deE"
+          },
+          "href" : "https://api.spotify.com/v1/albums/31p1zDTEJMfGJX942k0deE",
+          "id" : "31p1zDTEJMfGJX942k0deE",
+          "images" : [ {
+            "height" : 640,
+            "url" : "https://i.scdn.co/image/31f14d581f851504df266b30ffbbb86c05971193",
+            "width" : 640
+          }, {
+            "height" : 300,
+            "url" : "https://i.scdn.co/image/c1636a94efd7c7c1247291ddf55fae7627df6e4f",
+            "width" : 300
+          }, {
+            "height" : 64,
+            "url" : "https://i.scdn.co/image/27faef6728158c6ad24d8ff497141741a324cc5d",
+            "width" : 64
+          } ],
+          "name" : "Nightglide EP",
+          "type" : "album",
+          "uri" : "spotify:album:31p1zDTEJMfGJX942k0deE"
+        },
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/5JQljNQvDpk1hhKpJHpwNU"
+          },
+          "href" : "https://api.spotify.com/v1/artists/5JQljNQvDpk1hhKpJHpwNU",
+          "id" : "5JQljNQvDpk1hhKpJHpwNU",
+          "name" : "Klimeks",
+          "type" : "artist",
+          "uri" : "spotify:artist:5JQljNQvDpk1hhKpJHpwNU"
+        } ],
+        "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "JP", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TH", "TR", "TW", "US", "UY", "VN" ],
+        "disc_number" : 1,
+        "duration_ms" : 263362,
+        "explicit" : false,
+        "external_ids" : {
+          "isrc" : "GB-SMU-19-38404"
+        },
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/38YGZ0d5CRwQ9W41WSYtjA"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/38YGZ0d5CRwQ9W41WSYtjA",
+        "id" : "38YGZ0d5CRwQ9W41WSYtjA",
+        "name" : "Reborn",
+        "popularity" : 37,
+        "preview_url" : "https://p.scdn.co/mp3-preview/945c7e42ff2d4e0dbc36a7e134a5e7f8f332a9b1?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 1,
+        "type" : "track",
+        "uri" : "spotify:track:38YGZ0d5CRwQ9W41WSYtjA"
+      }
+    }, {
+      "added_at" : "2017-09-21T08:16:29Z",
+      "added_by" : {
+        "external_urls" : {
+          "spotify" : "http://open.spotify.com/user/robert.mark.jones"
+        },
+        "href" : "https://api.spotify.com/v1/users/robert.mark.jones",
+        "id" : "robert.mark.jones",
+        "type" : "user",
+        "uri" : "spotify:user:robert.mark.jones"
+      },
+      "is_local" : false,
+      "track" : {
+        "album" : {
+          "album_type" : "single",
+          "artists" : [ {
+            "external_urls" : {
+              "spotify" : "https://open.spotify.com/artist/1JV4iC1UhplRE8RFr8Q9n9"
+            },
+            "href" : "https://api.spotify.com/v1/artists/1JV4iC1UhplRE8RFr8Q9n9",
+            "id" : "1JV4iC1UhplRE8RFr8Q9n9",
+            "name" : "Paradis",
+            "type" : "artist",
+            "uri" : "spotify:artist:1JV4iC1UhplRE8RFr8Q9n9"
+          } ],
+          "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "JP", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TH", "TR", "TW", "US", "UY", "VN" ],
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/album/29cjYHkHPX7xAoLlkVEHbZ"
+          },
+          "href" : "https://api.spotify.com/v1/albums/29cjYHkHPX7xAoLlkVEHbZ",
+          "id" : "29cjYHkHPX7xAoLlkVEHbZ",
+          "images" : [ {
+            "height" : 640,
+            "url" : "https://i.scdn.co/image/8fa2586c5e64df58ea332b91d49ddc085982953a",
+            "width" : 640
+          }, {
+            "height" : 300,
+            "url" : "https://i.scdn.co/image/94ee8189a1258bcb93271c8e5a61b39747c59463",
+            "width" : 300
+          }, {
+            "height" : 64,
+            "url" : "https://i.scdn.co/image/6ca661d297b78e9bbe9a1c201f806e366024d08d",
+            "width" : 64
+          } ],
+          "name" : "Toi Et Moi (Lifelike Remix)",
+          "type" : "album",
+          "uri" : "spotify:album:29cjYHkHPX7xAoLlkVEHbZ"
+        },
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/1JV4iC1UhplRE8RFr8Q9n9"
+          },
+          "href" : "https://api.spotify.com/v1/artists/1JV4iC1UhplRE8RFr8Q9n9",
+          "id" : "1JV4iC1UhplRE8RFr8Q9n9",
+          "name" : "Paradis",
+          "type" : "artist",
+          "uri" : "spotify:artist:1JV4iC1UhplRE8RFr8Q9n9"
+        }, {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/3sa5sqxJqYjDZhGxmo4Ko5"
+          },
+          "href" : "https://api.spotify.com/v1/artists/3sa5sqxJqYjDZhGxmo4Ko5",
+          "id" : "3sa5sqxJqYjDZhGxmo4Ko5",
+          "name" : "Lifelike",
+          "type" : "artist",
+          "uri" : "spotify:artist:3sa5sqxJqYjDZhGxmo4Ko5"
+        } ],
+        "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "JP", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TH", "TR", "TW", "US", "UY", "VN" ],
+        "disc_number" : 1,
+        "duration_ms" : 309521,
+        "explicit" : false,
+        "external_ids" : {
+          "isrc" : "FRUM71601391"
+        },
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/5OYBiBozWuUUfhaZhVRq6y"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/5OYBiBozWuUUfhaZhVRq6y",
+        "id" : "5OYBiBozWuUUfhaZhVRq6y",
+        "name" : "Toi Et Moi - Lifelike Remix",
+        "popularity" : 30,
+        "preview_url" : "https://p.scdn.co/mp3-preview/64cf57bec735874b8ba5de4aafb7c60da49d3f00?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 1,
+        "type" : "track",
+        "uri" : "spotify:track:5OYBiBozWuUUfhaZhVRq6y"
+      }
+    }, {
+      "added_at" : "2017-09-21T08:14:57Z",
+      "added_by" : {
+        "external_urls" : {
+          "spotify" : "http://open.spotify.com/user/robert.mark.jones"
+        },
+        "href" : "https://api.spotify.com/v1/users/robert.mark.jones",
+        "id" : "robert.mark.jones",
+        "type" : "user",
+        "uri" : "spotify:user:robert.mark.jones"
+      },
+      "is_local" : false,
+      "track" : {
+        "album" : {
+          "album_type" : "single",
+          "artists" : [ {
+            "external_urls" : {
+              "spotify" : "https://open.spotify.com/artist/041iTeoMIwXMlShuQPIVKo"
+            },
+            "href" : "https://api.spotify.com/v1/artists/041iTeoMIwXMlShuQPIVKo",
+            "id" : "041iTeoMIwXMlShuQPIVKo",
+            "name" : "Klangkarussell",
+            "type" : "artist",
+            "uri" : "spotify:artist:041iTeoMIwXMlShuQPIVKo"
+          } ],
+          "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "JP", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TH", "TR", "TW", "US", "UY", "VN" ],
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/album/4a9KDgp9tQ1dpgzicEdScG"
+          },
+          "href" : "https://api.spotify.com/v1/albums/4a9KDgp9tQ1dpgzicEdScG",
+          "id" : "4a9KDgp9tQ1dpgzicEdScG",
+          "images" : [ {
+            "height" : 640,
+            "url" : "https://i.scdn.co/image/24b3c5039c322a43150ab12c83953870181b7e10",
+            "width" : 640
+          }, {
+            "height" : 300,
+            "url" : "https://i.scdn.co/image/e3967e011428e27941a3eb0bffc7711a1ea61f79",
+            "width" : 300
+          }, {
+            "height" : 64,
+            "url" : "https://i.scdn.co/image/40bbc2f78ccdfd256b000d90b3c26389698c15af",
+            "width" : 64
+          } ],
+          "name" : "Time",
+          "type" : "album",
+          "uri" : "spotify:album:4a9KDgp9tQ1dpgzicEdScG"
+        },
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/041iTeoMIwXMlShuQPIVKo"
+          },
+          "href" : "https://api.spotify.com/v1/artists/041iTeoMIwXMlShuQPIVKo",
+          "id" : "041iTeoMIwXMlShuQPIVKo",
+          "name" : "Klangkarussell",
+          "type" : "artist",
+          "uri" : "spotify:artist:041iTeoMIwXMlShuQPIVKo"
+        } ],
+        "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "JP", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TH", "TR", "TW", "US", "UY", "VN" ],
+        "disc_number" : 1,
+        "duration_ms" : 400957,
+        "explicit" : false,
+        "external_ids" : {
+          "isrc" : "DEUM71710056"
+        },
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/5UCWBekMGZxMDZyM2NVLzZ"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/5UCWBekMGZxMDZyM2NVLzZ",
+        "id" : "5UCWBekMGZxMDZyM2NVLzZ",
+        "name" : "Time",
+        "popularity" : 47,
+        "preview_url" : "https://p.scdn.co/mp3-preview/40b678ded86eefce2663108adad2a870ef8d3752?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 1,
+        "type" : "track",
+        "uri" : "spotify:track:5UCWBekMGZxMDZyM2NVLzZ"
+      }
+    }, {
+      "added_at" : "2017-09-21T08:10:50Z",
+      "added_by" : {
+        "external_urls" : {
+          "spotify" : "http://open.spotify.com/user/robert.mark.jones"
+        },
+        "href" : "https://api.spotify.com/v1/users/robert.mark.jones",
+        "id" : "robert.mark.jones",
+        "type" : "user",
+        "uri" : "spotify:user:robert.mark.jones"
+      },
+      "is_local" : false,
+      "track" : {
+        "album" : {
+          "album_type" : "album",
+          "artists" : [ {
+            "external_urls" : {
+              "spotify" : "https://open.spotify.com/artist/1kb9YssvADeiGvCUwJzbdT"
+            },
+            "href" : "https://api.spotify.com/v1/artists/1kb9YssvADeiGvCUwJzbdT",
+            "id" : "1kb9YssvADeiGvCUwJzbdT",
+            "name" : "Rodg",
+            "type" : "artist",
+            "uri" : "spotify:artist:1kb9YssvADeiGvCUwJzbdT"
+          } ],
+          "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "JP", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TH", "TR", "TW", "US", "UY", "VN" ],
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/album/7M8MMved6DekTZzMIq0n20"
+          },
+          "href" : "https://api.spotify.com/v1/albums/7M8MMved6DekTZzMIq0n20",
+          "id" : "7M8MMved6DekTZzMIq0n20",
+          "images" : [ {
+            "height" : 640,
+            "url" : "https://i.scdn.co/image/a1cb0342fa0f6f26cf3915f48e688491a23469ff",
+            "width" : 640
+          }, {
+            "height" : 300,
+            "url" : "https://i.scdn.co/image/40c38891dced083e6d66684de9f9375ba7edb63d",
+            "width" : 300
+          }, {
+            "height" : 64,
+            "url" : "https://i.scdn.co/image/752b767ae9c71790551c3407fca59916a594fe37",
+            "width" : 64
+          } ],
+          "name" : "High On Life",
+          "type" : "album",
+          "uri" : "spotify:album:7M8MMved6DekTZzMIq0n20"
+        },
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/1kb9YssvADeiGvCUwJzbdT"
+          },
+          "href" : "https://api.spotify.com/v1/artists/1kb9YssvADeiGvCUwJzbdT",
+          "id" : "1kb9YssvADeiGvCUwJzbdT",
+          "name" : "Rodg",
+          "type" : "artist",
+          "uri" : "spotify:artist:1kb9YssvADeiGvCUwJzbdT"
+        }, {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/6MIXwGBFXAuLoaZ6s0fCT7"
+          },
+          "href" : "https://api.spotify.com/v1/artists/6MIXwGBFXAuLoaZ6s0fCT7",
+          "id" : "6MIXwGBFXAuLoaZ6s0fCT7",
+          "name" : "Manu Zain",
+          "type" : "artist",
+          "uri" : "spotify:artist:6MIXwGBFXAuLoaZ6s0fCT7"
+        } ],
+        "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "JP", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TH", "TR", "TW", "US", "UY", "VN" ],
+        "disc_number" : 1,
+        "duration_ms" : 204000,
+        "explicit" : false,
+        "external_ids" : {
+          "isrc" : "NLF711603868"
+        },
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/0ST1l4GoKnC1pnHILfiEod"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/0ST1l4GoKnC1pnHILfiEod",
+        "id" : "0ST1l4GoKnC1pnHILfiEod",
+        "name" : "Parachute",
+        "popularity" : 33,
+        "preview_url" : "https://p.scdn.co/mp3-preview/bc084ce60102287e83e9950bd70a94fa025a871c?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 1,
+        "type" : "track",
+        "uri" : "spotify:track:0ST1l4GoKnC1pnHILfiEod"
+      }
+    }, {
+      "added_at" : "2017-09-21T08:29:23Z",
+      "added_by" : {
+        "external_urls" : {
+          "spotify" : "http://open.spotify.com/user/robert.mark.jones"
+        },
+        "href" : "https://api.spotify.com/v1/users/robert.mark.jones",
+        "id" : "robert.mark.jones",
+        "type" : "user",
+        "uri" : "spotify:user:robert.mark.jones"
+      },
+      "is_local" : false,
+      "track" : {
+        "album" : {
+          "album_type" : "album",
+          "artists" : [ {
+            "external_urls" : {
+              "spotify" : "https://open.spotify.com/artist/6u4jLGLPuarS3i2XWHVxoS"
+            },
+            "href" : "https://api.spotify.com/v1/artists/6u4jLGLPuarS3i2XWHVxoS",
+            "id" : "6u4jLGLPuarS3i2XWHVxoS",
+            "name" : "Sasha",
+            "type" : "artist",
+            "uri" : "spotify:artist:6u4jLGLPuarS3i2XWHVxoS"
+          } ],
+          "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "JP", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TH", "TR", "TW", "US", "UY", "VN" ],
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/album/7zVKzlEjV4CoK3mRSofWJ9"
+          },
+          "href" : "https://api.spotify.com/v1/albums/7zVKzlEjV4CoK3mRSofWJ9",
+          "id" : "7zVKzlEjV4CoK3mRSofWJ9",
+          "images" : [ {
+            "height" : 640,
+            "url" : "https://i.scdn.co/image/2752c972cc6febf98f128960bd49e930dab4fdd8",
+            "width" : 640
+          }, {
+            "height" : 300,
+            "url" : "https://i.scdn.co/image/33080fb69fd1332187389ba6fdf40a8f1cee572b",
+            "width" : 300
+          }, {
+            "height" : 64,
+            "url" : "https://i.scdn.co/image/7674fbe1a4f4b1f2f6dc8ad18a32edec78117c3f",
+            "width" : 64
+          } ],
+          "name" : "Airdrawndagger",
+          "type" : "album",
+          "uri" : "spotify:album:7zVKzlEjV4CoK3mRSofWJ9"
+        },
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/6u4jLGLPuarS3i2XWHVxoS"
+          },
+          "href" : "https://api.spotify.com/v1/artists/6u4jLGLPuarS3i2XWHVxoS",
+          "id" : "6u4jLGLPuarS3i2XWHVxoS",
+          "name" : "Sasha",
+          "type" : "artist",
+          "uri" : "spotify:artist:6u4jLGLPuarS3i2XWHVxoS"
+        } ],
+        "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "JP", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TH", "TR", "TW", "US", "UY", "VN" ],
+        "disc_number" : 1,
+        "duration_ms" : 449626,
+        "explicit" : false,
+        "external_ids" : {
+          "isrc" : "GBARL0200144"
+        },
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/7KOZQjsli9Ss1c9lNMTKRu"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/7KOZQjsli9Ss1c9lNMTKRu",
+        "id" : "7KOZQjsli9Ss1c9lNMTKRu",
+        "name" : "Wavy Gravy",
+        "popularity" : 25,
+        "preview_url" : "https://p.scdn.co/mp3-preview/a2a3f88c692db5df7efcc99ca9e3ac03db2a2815?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 11,
+        "type" : "track",
+        "uri" : "spotify:track:7KOZQjsli9Ss1c9lNMTKRu"
+      }
+    }, {
+      "added_at" : "2017-09-21T08:09:57Z",
+      "added_by" : {
+        "external_urls" : {
+          "spotify" : "http://open.spotify.com/user/robert.mark.jones"
+        },
+        "href" : "https://api.spotify.com/v1/users/robert.mark.jones",
+        "id" : "robert.mark.jones",
+        "type" : "user",
+        "uri" : "spotify:user:robert.mark.jones"
+      },
+      "is_local" : false,
+      "track" : {
+        "album" : {
+          "album_type" : "single",
+          "artists" : [ {
+            "external_urls" : {
+              "spotify" : "https://open.spotify.com/artist/0oEuMd3OoMuGOIUt1wiMbA"
+            },
+            "href" : "https://api.spotify.com/v1/artists/0oEuMd3OoMuGOIUt1wiMbA",
+            "id" : "0oEuMd3OoMuGOIUt1wiMbA",
+            "name" : "Slusnik Luna",
+            "type" : "artist",
+            "uri" : "spotify:artist:0oEuMd3OoMuGOIUt1wiMbA"
+          } ],
+          "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "JP", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TH", "TR", "TW", "US", "UY", "VN" ],
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/album/39KmC4qAz5Mg7Bp6Nt7bCk"
+          },
+          "href" : "https://api.spotify.com/v1/albums/39KmC4qAz5Mg7Bp6Nt7bCk",
+          "id" : "39KmC4qAz5Mg7Bp6Nt7bCk",
+          "images" : [ {
+            "height" : 640,
+            "url" : "https://i.scdn.co/image/1047a11ee3b946eaa706ae9c4930bcc648c70108",
+            "width" : 640
+          }, {
+            "height" : 300,
+            "url" : "https://i.scdn.co/image/1fbfd10aa077c51069fad9564642c6c630fe1833",
+            "width" : 300
+          }, {
+            "height" : 64,
+            "url" : "https://i.scdn.co/image/ea2749adf5ac258f5152b84ca56dd196a99d0a64",
+            "width" : 64
+          } ],
+          "name" : "Sun 2011",
+          "type" : "album",
+          "uri" : "spotify:album:39KmC4qAz5Mg7Bp6Nt7bCk"
+        },
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/0oEuMd3OoMuGOIUt1wiMbA"
+          },
+          "href" : "https://api.spotify.com/v1/artists/0oEuMd3OoMuGOIUt1wiMbA",
+          "id" : "0oEuMd3OoMuGOIUt1wiMbA",
+          "name" : "Slusnik Luna",
+          "type" : "artist",
+          "uri" : "spotify:artist:0oEuMd3OoMuGOIUt1wiMbA"
+        } ],
+        "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "JP", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TH", "TR", "TW", "US", "UY", "VN" ],
+        "disc_number" : 1,
+        "duration_ms" : 223522,
+        "explicit" : false,
+        "external_ids" : {
+          "isrc" : "GBEWA1001303"
+        },
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/65VZqlV7p6H6D6icBq6Yg3"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/65VZqlV7p6H6D6icBq6Yg3",
+        "id" : "65VZqlV7p6H6D6icBq6Yg3",
+        "name" : "Sun 2011 - Radio Edit",
+        "popularity" : 10,
+        "preview_url" : "https://p.scdn.co/mp3-preview/17ea597d4b1e671b5572a48a31a22cde79c38c3e?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 3,
+        "type" : "track",
+        "uri" : "spotify:track:65VZqlV7p6H6D6icBq6Yg3"
+      }
+    }, {
+      "added_at" : "2017-09-21T08:07:21Z",
+      "added_by" : {
+        "external_urls" : {
+          "spotify" : "http://open.spotify.com/user/robert.mark.jones"
+        },
+        "href" : "https://api.spotify.com/v1/users/robert.mark.jones",
+        "id" : "robert.mark.jones",
+        "type" : "user",
+        "uri" : "spotify:user:robert.mark.jones"
+      },
+      "is_local" : false,
+      "track" : {
+        "album" : {
+          "album_type" : "album",
+          "artists" : [ {
+            "external_urls" : {
+              "spotify" : "https://open.spotify.com/artist/2o5jDhtHVPhrJdv3cEQ99Z"
+            },
+            "href" : "https://api.spotify.com/v1/artists/2o5jDhtHVPhrJdv3cEQ99Z",
+            "id" : "2o5jDhtHVPhrJdv3cEQ99Z",
+            "name" : "Tiësto",
+            "type" : "artist",
+            "uri" : "spotify:artist:2o5jDhtHVPhrJdv3cEQ99Z"
+          } ],
+          "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "JP", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TH", "TR", "TW", "US", "UY", "VN" ],
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/album/285IDbC2qfQaVGgqCdBXIt"
+          },
+          "href" : "https://api.spotify.com/v1/albums/285IDbC2qfQaVGgqCdBXIt",
+          "id" : "285IDbC2qfQaVGgqCdBXIt",
+          "images" : [ {
+            "height" : 640,
+            "url" : "https://i.scdn.co/image/736388fc539d981a35a197797eaf04b09943ec64",
+            "width" : 640
+          }, {
+            "height" : 300,
+            "url" : "https://i.scdn.co/image/fdc084ae455f37c5b80a947c188e7fe17c3e34ef",
+            "width" : 300
+          }, {
+            "height" : 64,
+            "url" : "https://i.scdn.co/image/3de14785e6f1e2cacc2e4a8a69c4e16f90b51c8b",
+            "width" : 64
+          } ],
+          "name" : "Magikal Journey -The Hits Collection 1998 - 2008",
+          "type" : "album",
+          "uri" : "spotify:album:285IDbC2qfQaVGgqCdBXIt"
+        },
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/2o5jDhtHVPhrJdv3cEQ99Z"
+          },
+          "href" : "https://api.spotify.com/v1/artists/2o5jDhtHVPhrJdv3cEQ99Z",
+          "id" : "2o5jDhtHVPhrJdv3cEQ99Z",
+          "name" : "Tiësto",
+          "type" : "artist",
+          "uri" : "spotify:artist:2o5jDhtHVPhrJdv3cEQ99Z"
+        } ],
+        "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "JP", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TH", "TR", "TW", "US", "UY", "VN" ],
+        "disc_number" : 1,
+        "duration_ms" : 204800,
+        "explicit" : false,
+        "external_ids" : {
+          "isrc" : "NLE710280211"
+        },
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/2P76KcfOHSp6il7kOJPVDH"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/2P76KcfOHSp6il7kOJPVDH",
+        "id" : "2P76KcfOHSp6il7kOJPVDH",
+        "name" : "Suburban Train - Radio Edit",
+        "popularity" : 34,
+        "preview_url" : "https://p.scdn.co/mp3-preview/06ef58606aea9903c0b7f8e3ef93ebe836a9dc7b?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 2,
+        "type" : "track",
+        "uri" : "spotify:track:2P76KcfOHSp6il7kOJPVDH"
+      }
+    } ],
+    "limit" : 100,
+    "next" : null,
+    "offset" : 0,
+    "previous" : null,
+    "total" : 11
+  },
+  "type" : "playlist",
+  "uri" : "spotify:user:robert.mark.jones:playlist:3BfOaVLsbk9v745eDk0jYH"
+}

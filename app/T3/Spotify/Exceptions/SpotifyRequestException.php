@@ -2,7 +2,9 @@
 
 namespace App\T3\Spotify\Exceptions;
 
-class SpotifyRequestException extends \Exception
+use Exception;
+
+class SpotifyRequestException extends Exception
 {
 
 }

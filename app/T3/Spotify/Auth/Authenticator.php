@@ -4,7 +4,7 @@ namespace App\T3\Spotify\Auth;
 
 use App\T3\Spotify\Http\Request;
 
-class ClientCredentials implements AuthenticatorInterface
+class Authenticator
 {
     const AUTH_URL = 'https://accounts.spotify.com/api/token';
 
@@ -89,7 +89,7 @@ class ClientCredentials implements AuthenticatorInterface
     /**
      * Set the credentials returned from Spotify to the session
      *
-     * @param stdClass $response
+     * @param array $response
      * @return void
      */
     private function setSessionCredentials($response)
@@ -110,7 +110,7 @@ class ClientCredentials implements AuthenticatorInterface
         $expiresIn = session('expires_in', false);
         $accessToken = session('access_token', false);
 
-        if ($expiresIn && $accessToken && (time() < $expiresIn)) {
+        if ($expiresIn && $accessToken && time() < $expiresIn) {
             return true;
         }
 

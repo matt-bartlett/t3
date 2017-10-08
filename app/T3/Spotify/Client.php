@@ -3,7 +3,8 @@
 namespace App\T3\Spotify;
 
 use App\T3\Spotify\SpotifyAPI;
-use App\T3\Spotify\Auth\ClientCredentials;
+use App\T3\Spotify\Auth\Authenticator;
+use App\T3\Spotify\Transformers\TransformerInterface;
 
 class Client
 {
@@ -13,7 +14,7 @@ class Client
     private $api;
 
     /**
-     * @var App\T3\Spotify\Auth\ClientCredentials
+     * @var App\T3\Spotify\Auth\Authenticator
      */
     private $authenticator;
 
@@ -21,10 +22,10 @@ class Client
      * Construct the class
      *
      * @param App\T3\Spotify\SpotifyAPI $api
-     * @param App\T3\Spotify\Auth\ClientCredentials $authenticator
+     * @param App\T3\Spotify\Auth\Authenticator $authenticator
      * @return void
      */
-    public function __construct(SpotifyAPI $api, ClientCredentials $authenticator)
+    public function __construct(SpotifyAPI $api, Authenticator $authenticator)
     {
         $this->api = $api;
         $this->authenticator = $authenticator;
@@ -35,7 +36,7 @@ class Client
      *
      * @param string $userId
      * @param string $playlistId
-     * @return stdClass
+     * @return array
      */
     public function getPlaylist($userId, $playlistId)
     {
@@ -46,6 +47,18 @@ class Client
         $response = $this->api->getPlaylist($userId, $playlistId);
 
         return $response;
+    }
+
+    /**
+     * Transform the response into a custom format
+     *
+     * @param stdClass $response
+     * @param App\T3\Spotify\Transformers\TransformerInterface $transformer
+     * @return array
+     */
+    public function transform($response, TransformerInterface $transformer)
+    {
+        return $transformer->transform($response);
     }
 
     /**
