@@ -9,7 +9,7 @@ use App\T3\Spotify\Transformers\TransformerInterface;
 class Client
 {
     /**
-     * @var App\T3\Spotify\SpotifyAPI
+     * @var App\T3\Spotify\API
      */
     private $api;
 
@@ -32,21 +32,17 @@ class Client
     }
 
     /**
-     * Retrieve a users playlist
+     * Return the API class
      *
-     * @param string $userId
-     * @param string $playlistId
-     * @return stdClass
+     * @return App\T3\Spotify\API
      */
-    public function getPlaylist($userId, $playlistId)
+    public function getApi()
     {
         $accessToken = $this->retrieveAccessToken();
 
         $this->api->setAccessToken($accessToken);
 
-        $response = $this->api->getPlaylist($userId, $playlistId);
-
-        return $response;
+        return $this->api;
     }
 
     /**
@@ -68,8 +64,8 @@ class Client
      */
     private function retrieveAccessToken()
     {
-        $this->authenticator->setClientId(env('SPOTIFY_CLIENT_ID'));
-        $this->authenticator->setClientSecret(env('SPOTIFY_CLIENT_SECRET'));
+        $this->authenticator->setClientId(getenv('SPOTIFY_CLIENT_ID'));
+        $this->authenticator->setClientSecret(getenv('SPOTIFY_CLIENT_SECRET'));
 
         $accessToken = $this->authenticator->getAccessToken();
 

@@ -68,17 +68,17 @@ class PlaylistController extends Controller
     {
         try {
             // Fetch the Playlist from Spotify
-            $playlist = $this->spotify->getPlaylist(
+            $playlist = $this->spotify->getApi()->getPlaylist(
                 $request->get('spotify_user_id'),
                 $request->get('spotify_playlist_id')
             );
+
             // Transform the Playlist to an array
             $playlist = $this->spotify->transform($playlist, new PlaylistTransformer);
+
             // Save the Playlist
             DB::transaction(function () use ($playlist) {
-                $playlist = $this->playlist->create($playlist)
-                    ->tracks()
-                    ->createMany($playlist['tracks']);
+                $this->playlist->create($playlist)->tracks()->createMany($playlist['tracks']);
             });
 
             return redirect()->route('admin.playlists.index');
