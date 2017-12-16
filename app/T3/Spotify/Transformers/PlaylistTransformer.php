@@ -3,8 +3,6 @@
 namespace App\T3\Spotify\Transformers;
 
 use stdClass;
-use App\Models\Track;
-use App\Models\Playlist;
 
 class PlaylistTransformer extends Transformer implements TransformerInterface
 {

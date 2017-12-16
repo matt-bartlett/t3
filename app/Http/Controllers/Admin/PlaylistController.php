@@ -41,7 +41,7 @@ class PlaylistController extends Controller
      *
      * @return Illuminate\View\View
      */
-    public function index(Playlist $playlist)
+    public function index()
     {
         $playlists = $this->playlist->latest()->paginate(15);
 

@@ -2,7 +2,7 @@
 
 namespace App\T3\Spotify;
 
-use App\T3\Spotify\SpotifyAPI;
+use App\T3\Spotify\API;
 use App\T3\Spotify\Auth\Authenticator;
 use App\T3\Spotify\Transformers\TransformerInterface;
 
@@ -21,11 +21,11 @@ class Client
     /**
      * Construct the class
      *
-     * @param App\T3\Spotify\SpotifyAPI $api
+     * @param App\T3\Spotify\API $api
      * @param App\T3\Spotify\Auth\Authenticator $authenticator
      * @return void
      */
-    public function __construct(SpotifyAPI $api, Authenticator $authenticator)
+    public function __construct(API $api, Authenticator $authenticator)
     {
         $this->api = $api;
         $this->authenticator = $authenticator;

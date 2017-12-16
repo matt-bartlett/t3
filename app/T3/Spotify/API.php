@@ -4,7 +4,7 @@ namespace App\T3\Spotify;
 
 use App\T3\Spotify\Http\Request;
 
-class SpotifyAPI
+class API
 {
     const API_BASE_URL = 'https://api.spotify.com/v1';
     const ACCOUNT_BASE_URL = 'https://accounts.spotify.com';
