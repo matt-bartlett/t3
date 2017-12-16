@@ -3,6 +3,7 @@
 namespace App\T3\Spotify\Auth;
 
 use App\T3\Spotify\Http\Request;
+use Illuminate\Session\SessionManager;
 
 class Authenticator
 {
@@ -24,14 +25,20 @@ class Authenticator
     private $request;
 
     /**
+     * @var Illuminate\Session\SessionManager
+     */
+    private $session;
+
+    /**
      * Construct the class
      *
      * @param App\T3\Spotify\Request $request
      * @return void
      */
-    public function __construct(Request $request)
+    public function __construct(Request $request, SessionManager $session)
     {
         $this->request = $request;
+        $this->session = $session;
     }
 
     /**
@@ -76,7 +83,7 @@ class Authenticator
     public function getAccessToken()
     {
         if ($this->isAccessTokenValid()) {
-            return session('access_token');
+            return $this->session->get('access_token');
         }
 
         $response = $this->authenticate();
@@ -94,7 +101,7 @@ class Authenticator
      */
     private function setSessionCredentials($response)
     {
-        session([
+        $this->session->put([
             'expires_in' => (time() + $response->expires_in),
             'access_token' => $response->access_token
         ]);
@@ -107,8 +114,8 @@ class Authenticator
      */
     private function isAccessTokenValid()
     {
-        $expiresIn = session('expires_in', false);
-        $accessToken = session('access_token', false);
+        $expiresIn = $this->session->get('expires_in', false);
+        $accessToken = $this->session->get('access_token', false);
 
         if ($expiresIn && $accessToken && time() < $expiresIn) {
             return true;
