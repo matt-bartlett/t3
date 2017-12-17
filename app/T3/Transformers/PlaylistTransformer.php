@@ -46,7 +46,7 @@ class PlaylistTransformer extends TransformerAbstract
      */
     public function includeTracks(Playlist $playlist)
     {
-        $tracks = $playlist->tracks()->paginate(20);
+        $tracks = $playlist->tracks()->paginate(100);
 
         $resource = ($this->collection($tracks, new TrackTransformer))
             ->setPaginator(new IlluminatePaginatorAdapter($tracks));
