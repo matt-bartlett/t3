@@ -15,6 +15,7 @@
                                 <td>Owner</td>
                                 <td>Tracks</td>
                                 <td>Created</td>
+                                <td></td>
                             </tr>
                         </thead>
                         <tbody>
@@ -25,6 +26,7 @@
                                     <td>{{ $playlist->owner_name }}</td>
                                     <td>{{ $playlist->tracks->count() }}</td>
                                     <td>{{ $playlist->created_at }}</td>
+                                    <td><a href="{{ route('admin.playlists.edit', $playlist->id) }}">Edit</a></td>
                                 </tr>
                             @endforeach
                         </tbody>

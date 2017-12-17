@@ -7,6 +7,7 @@ use Exception;
 use App\Models\Playlist;
 use App\T3\Spotify\Client;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\PlaylistRequest;
 use App\Http\Requests\SpotifyPlaylistRequest;
 use App\T3\Spotify\Transformers\PlaylistTransformer;
 
@@ -62,7 +63,7 @@ class PlaylistController extends Controller
      * Store a new Playlist
      *
      * @param App\Http\Requests\SpotifyPlaylistRequest $request
-     * @return Illuminate\View\View
+     * @return Illuminate\Http\RedirectResponse
      */
     public function store(SpotifyPlaylistRequest $request)
     {
@@ -85,5 +86,36 @@ class PlaylistController extends Controller
         } catch (Exception $e) {
             return back()->withErrors($e->getMessage());
         }
+    }
+
+    /**
+     * Render the form to edit a Playlist
+     *
+     * @param integer $id
+     * @return Illuminate\View\View
+     */
+    public function edit($id)
+    {
+        $playlist = $this->playlist->findOrFail($id);
+
+        return view('admin/playlists/edit', compact('playlist'));
+    }
+
+    /**
+     * Update the Playlist
+     *
+     * @param App\Http\Requests\PlaylistRequest $request
+     * @param integer $id
+     * @return Illuminate\Http\RedirectResponse
+     */
+    public function update(PlaylistRequest $request, $id)
+    {
+        $playlist = $this->playlist->findOrFail($id);
+
+        $playlist->update([
+            'name' => $request->get('name')
+        ]);
+
+        return redirect()->route('admin.playlists.index');
     }
 }
