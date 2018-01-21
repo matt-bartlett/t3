@@ -24,6 +24,7 @@ class SpotifyPlaylistRequest extends FormRequest
     public function rules()
     {
         return [
+            'name' => 'nullable|string',
             'spotify_user_id' => 'required|alpha_num',
             'spotify_playlist_id' => 'required|alpha_num'
         ];

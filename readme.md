@@ -22,5 +22,5 @@ http://<domain>/api/search?q=<searchterm>
 
 ### Things To Do (Nice to haves)
 - [x] - Add Tests for Track/Artist/Album search endpoint
-- [ ] - Add an auth-guarded section for easily pulling playlists from Spotify
-- [ ] - Add an auth-guarded section of allowed Spotify users to have their playlists shown
+- [x] - Add an auth-guarded section for easily pulling playlists from Spotify
+- [] - Add an auth-guarded section of allowed Spotify users to have their playlists shown

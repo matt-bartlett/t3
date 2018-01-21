@@ -13,27 +13,30 @@
                     <form class="form-horizontal" method="POST" action="{{ route('admin.playlists.store') }}">
                         {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('spotify_playlist_id') ? ' has-error' : '' }}">
+                        <div class="form-group">
                             <label for="spotify_playlist_id" class="col-md-4 control-label">Spotify Playlist ID</label>
                             <div class="col-md-6">
-                                <input id="spotify_playlist_id" type="text" class="form-control" name="spotify_playlist_id" value="{{ old('spotify_playlist_id') }}">
-                                @if ($errors->has('spotify_playlist_id'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('spotify_playlist_id') }}</strong>
-                                    </span>
-                                @endif
+                                <input type="text" class="form-control" id="spotify_playlist_id" name="spotify_playlist_id" value="{{ old('spotify_playlist_id') }}">
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('spotify_user_id') ? ' has-error' : '' }}">
+                        <div class="form-group">
                             <label for="spotify_user_id" class="col-md-4 control-label">Spotify User ID</label>
                             <div class="col-md-6">
-                                <input id="spotify_user_id" type="text" class="form-control" name="spotify_user_id">
-                                @if ($errors->has('spotify_user_id'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('spotify_user_id') }}</strong>
-                                    </span>
-                                @endif
+                                <input type="text" class="form-control" id="spotify_user_id" name="spotify_user_id" value="{{ old('spotify_user_id') }}">
+                            </div>
+                        </div>
+
+                        <div class="alert alert-panel-info">
+                            <p>If you wish to give this Playlist an alternative name to the one on Spotify, fill the <strong>Playlist Name</strong> field below.
+                                Otherwise, leave it blank.
+                            </p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name" class="col-md-4 control-label">Playlist Name</label>
+                            <div class="col-md-6">
+                                <input id="name" type="text" class="form-control" name="name">
                             </div>
                         </div>
 

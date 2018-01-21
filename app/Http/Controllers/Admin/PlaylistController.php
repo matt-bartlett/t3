@@ -77,6 +77,11 @@ class PlaylistController extends Controller
             // Transform the Playlist to an array
             $playlist = $this->spotify->transform($playlist, new PlaylistTransformer);
 
+            // Override the Playlist name if present
+            if ($request->get('name')) {
+                $playlist['name'] = $request->get('name');
+            }
+
             // Save the Playlist
             DB::transaction(function () use ($playlist) {
                 $this->playlist->create($playlist)->tracks()->createMany($playlist['tracks']);
