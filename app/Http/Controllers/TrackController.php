@@ -42,7 +42,9 @@ class TrackController extends Controller
 
         $tracks = $this->track->search($query)->get();
 
-        $tracks = fractal($tracks, new TrackTransformer)->toArray();
+        $tracks = fractal($tracks, new TrackTransformer)
+            ->includePlaylist()
+            ->toArray();
 
         return $tracks;
     }

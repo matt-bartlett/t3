@@ -75,4 +75,30 @@ class TrackTest extends TestCase
         $this->assertCount(1, $decodedResponse['data']);
         $this->assertEquals('Run DMC', $decodedResponse['data'][0]['artist']);
     }
+
+    /**
+     * @return void
+     */
+    public function test_searching_tracks_returns_associated_playlist()
+    {
+        $playlist = factory(Playlist::class)->create([
+            'name' => 'T3 Playlist #1'
+        ]);
+
+        $playlist->tracks()->save(
+            factory(Track::class)->make([
+                'artist' => 'Deep Dish'
+            ])
+        );
+
+        // Attempt to find the arist with invalid search criteria
+        $response = $this->json('GET', 'api/search/', ['q' => 'Deep Dish']);
+        $response->assertStatus(200);
+
+        // Decode JSON resposne to an array
+        $decodedResponse = $response->decodeResponseJson();
+
+        // Assert on results
+        $this->assertEquals('T3 Playlist #1', $decodedResponse['data'][0]['playlist']['data']['name']);
+    }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Playlist;
 use Illuminate\Database\Eloquent\Model;
 
 class Track extends Model
@@ -22,6 +23,14 @@ class Track extends Model
         'spotify_preview_url',
         'spotify_thumbnail_url'
     ];
+
+    /**
+     * Eloquent relationship where Track belongs-to a Playlist
+     */
+    public function playlist()
+    {
+        return $this->belongsTo(Playlist::class);
+    }
 
     /**
      * Define an attribute on a Track to return its duration

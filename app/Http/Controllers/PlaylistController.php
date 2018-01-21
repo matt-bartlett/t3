@@ -24,7 +24,6 @@ class PlaylistController extends Controller
 
     /**
      * Return paginated list of Playlists
-     * Action divided to handle both Web & API calls
      *
      * @return Illuminate\Http\Response
      */
@@ -39,7 +38,6 @@ class PlaylistController extends Controller
 
     /**
      * Return paginated list of Tracks for a specified Playlist
-     * Action divided to handle both Web & API calls
      *
      * @param integer $id
      * @return Illuminate\Http\Response
