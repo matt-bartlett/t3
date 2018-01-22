@@ -43,11 +43,11 @@ class TrackTransformer extends TransformerAbstract
      * Transform model output
      *
      * @param App\Models\Track $track
-     * @return League\Fractal\Resource\Collection
+     * @return League\Fractal\Resource\Item
      */
     public function includePlaylist(Track $track)
     {
-        $playlist = $track->playlist()->first();
+        $playlist = $track->playlist;
 
         $resource = $this->item($playlist, new PlaylistTransformer);
 
