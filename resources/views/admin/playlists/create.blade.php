@@ -5,7 +5,9 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Create Playlist</div>
+                <div class="panel-heading">
+                    <h5 class="panel-title">Create Playlist</h5>
+                </div>
                 <div class="panel-body">
 
                     @include('partials/errors')
@@ -21,9 +23,9 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="spotify_user_id" class="col-md-4 control-label">Spotify User ID</label>
+                            <label for="spotify_account_id" class="col-md-4 control-label">Spotify Account ID</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" id="spotify_user_id" name="spotify_user_id" value="{{ old('spotify_user_id') }}">
+                                <input type="text" class="form-control" id="spotify_account_id" name="spotify_account_id" value="{{ old('spotify_account_id') }}">
                             </div>
                         </div>
 

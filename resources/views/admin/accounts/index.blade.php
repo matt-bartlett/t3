@@ -4,9 +4,13 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <a class="btn btn-primary" href="{{ route('admin.accounts.create') }}">Create Spotify User</a>
             <div class="panel panel-default">
-                <div class="panel-heading">Spotify Users</div>
+                <div class="panel-heading clearfix">
+                    <h5 class="panel-title pull-left">Spotify Accounts</h5>
+                    <div class="btn-group pull-right">
+                        <a class="btn btn-default" href="{{ route('admin.accounts.create') }}">Create</a>
+                    </div>
+                </div>
                 <div class="panel-body">
                     @if ($accounts->count() > 0)
                         <table class="table table-striped">

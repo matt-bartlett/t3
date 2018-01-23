@@ -4,9 +4,13 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <a class="btn btn-primary" href="{{ route('admin.playlists.create') }}">Create Playlist</a>
             <div class="panel panel-default">
-                <div class="panel-heading">Playlists</div>
+                <div class="panel-heading clearfix">
+                    <h5 class="panel-title pull-left">Playlists</h5>
+                    <div class="btn-group pull-right">
+                        <a class="btn btn-default" href="{{ route('admin.playlists.create') }}">Create</a>
+                    </div>
+                </div>
                 <div class="panel-body">
                     @if ($playlists->count() > 0)
                         <table class="table table-striped">

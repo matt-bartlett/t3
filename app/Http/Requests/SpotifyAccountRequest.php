@@ -25,7 +25,7 @@ class SpotifyAccountRequest extends FormRequest
     {
         return [
             'name' => 'required|string',
-            'spotify_user_id' => 'required|alpha_num',
+            'spotify_account_id' => 'required|alpha_num',
         ];
     }
 
@@ -37,8 +37,8 @@ class SpotifyAccountRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => 'Please specify a display name for the Spotify user',
-            'spotify_user_id.required' => 'Please specify the Spotify ID'
+            'name.required' => 'Give this Account a name.',
+            'spotify_account_id.required' => 'Give this Account a relevant ID.'
         ];
     }
 }

@@ -70,7 +70,7 @@ class PlaylistController extends Controller
         try {
             // Fetch the Playlist from Spotify
             $playlist = $this->spotify->getApi()->getPlaylist(
-                $request->get('spotify_user_id'),
+                $request->get('spotify_account_id'),
                 $request->get('spotify_playlist_id')
             );
 

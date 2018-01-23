@@ -36,7 +36,7 @@ class PlaylistRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => 'Please specify a name for this Playlist'
+            'name.required' => 'Give this Playlist a name.'
         ];
     }
 }

@@ -5,7 +5,9 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Update Spotify User</div>
+                <div class="panel-heading">
+                    <h5 class="panel-title">Update Spotify User</h5>
+                </div>
                 <div class="panel-body">
 
                     @include('partials/errors')

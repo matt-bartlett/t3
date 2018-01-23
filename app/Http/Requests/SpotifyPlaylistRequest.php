@@ -25,7 +25,7 @@ class SpotifyPlaylistRequest extends FormRequest
     {
         return [
             'name' => 'nullable|string',
-            'spotify_user_id' => 'required|alpha_num',
+            'spotify_account_id' => 'required|alpha_num',
             'spotify_playlist_id' => 'required|alpha_num'
         ];
     }
@@ -38,8 +38,8 @@ class SpotifyPlaylistRequest extends FormRequest
     public function messages()
     {
         return [
-            'spotify_user_id.required' => 'Please specify the User ID associated with the Playlist',
-            'spotify_playlist_id.required' => 'Please specify the Playlist ID'
+            'spotify_account_id.required' => 'Give the Account ID.',
+            'spotify_playlist_id.required' => 'Give the Playlist ID.'
         ];
     }
 }

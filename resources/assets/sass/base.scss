@@ -12,3 +12,11 @@ html, body {
     border-color: #ddd;
     color: #333333;
 }
+
+.panel > .panel-heading {
+	min-height: 55px;
+}
+
+.panel > .panel-heading > .panel-title {
+	margin-top: 7.5px;
+}
