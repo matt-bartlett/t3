@@ -20,8 +20,8 @@
             <!-- Left Side Of Navbar -->
             @if (Auth::user())
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ route('admin.playlists.index') }}">Dashboard</a></li>
-                    <li><a href="{{ route('admin.playlists.create') }}">Create Playlist</a></li>
+                    <li><a href="{{ route('admin.playlists.index') }}">Playlists</a></li>
+                    <li><a href="{{ route('admin.accounts.index') }}">Spotify Accounts</a></li>
                 </ul>
             @endif
 
