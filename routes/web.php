@@ -32,6 +32,7 @@ Route::get('/admin/playlists', 'Admin\PlaylistController@create')->name('admin.p
 Route::post('/admin/playlists', 'Admin\PlaylistController@store')->name('admin.playlists.store');
 Route::get('/admin/playlists/{id}/edit', 'Admin\PlaylistController@edit')->name('admin.playlists.edit');
 Route::put('/admin/playlists/{id}', 'Admin\PlaylistController@update')->name('admin.playlists.update');
+Route::delete('/admin/playlists/{id}', 'Admin\PlaylistController@destroy')->name('admin.playlists.destroy');
 
 // Admin - Spotify Account Routes
 Route::get('/admin/accounts', 'Admin\AccountController@index')->name('admin.accounts.index');
@@ -39,3 +40,4 @@ Route::get('/admin/accounts/create', 'Admin\AccountController@create')->name('ad
 Route::post('/admin/accounts', 'Admin\AccountController@store')->name('admin.accounts.store');
 Route::get('/admin/accounts/{id}/edit', 'Admin\AccountController@edit')->name('admin.accounts.edit');
 Route::put('/admin/accounts/{id}', 'Admin\AccountController@update')->name('admin.accounts.update');
+Route::delete('/admin/accounts/{id}', 'Admin\AccountController@destroy')->name('admin.accounts.destroy');

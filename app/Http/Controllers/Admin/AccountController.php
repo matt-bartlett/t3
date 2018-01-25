@@ -59,7 +59,7 @@ class AccountController extends Controller
     {
         try {
             $account = $this->account->create(
-                $request->only('name', 'spotify_user_id')
+                $request->only('name', 'spotify_account_id')
             );
 
             return redirect()->route('admin.accounts.index');
@@ -97,5 +97,20 @@ class AccountController extends Controller
         );
 
         return redirect()->route('admin.accounts.index');
+    }
+
+    /**
+     * Remove the Spotify account
+     *
+     * @param integer $id
+     * @return Illuminate\Http\RedirectResponse
+     */
+    public function destroy($id)
+    {
+        $account = $this->account->findOrFail($id);
+
+        $account->delete();
+
+        return back();
     }
 }

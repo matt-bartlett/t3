@@ -123,4 +123,18 @@ class PlaylistController extends Controller
 
         return redirect()->route('admin.playlists.index');
     }
+    /**
+     * Remove the Playlist
+     *
+     * @param integer $id
+     * @return Illuminate\Http\RedirectResponse
+     */
+    public function destroy($id)
+    {
+        $playlist = $this->playlist->findOrFail($id);
+
+        $playlist->delete();
+
+        return back();
+    }
 }

@@ -20,3 +20,7 @@ html, body {
 .panel > .panel-heading > .panel-title {
 	margin-top: 7.5px;
 }
+
+.table > tbody > tr > td {
+	vertical-align: middle;
+}

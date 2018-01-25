@@ -12,6 +12,6 @@ class Account extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'spotify_user_id',
+        'name', 'spotify_account_id',
     ];
 }

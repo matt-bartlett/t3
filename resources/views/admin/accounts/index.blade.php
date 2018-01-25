@@ -25,8 +25,15 @@
                                 @foreach ($accounts as $account)
                                     <tr>
                                         <td>{{ $account->name }}</td>
-                                        <td>{{ $account->spotify_user_id }}</td>
-                                        <td><a href="{{ route('admin.accounts.edit', $account->id) }}">Edit</a></td>
+                                        <td>{{ $account->spotify_account_id }}</td>
+                                        <td>
+                                            <a class="btn btn-sm btn-default" href="{{ route('admin.accounts.edit', $account->id) }}">Edit</a>
+                                            <form style="display: inline-block;" method="POST" action="{{ route('admin.accounts.destroy', $account->id) }}">
+                                                {{ csrf_field() }}
+                                                {{ method_field('DELETE') }}
+                                                <button class="btn btn-sm btn-danger">Delete</button>
+                                            </form>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>

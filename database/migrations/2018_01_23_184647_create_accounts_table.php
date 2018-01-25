@@ -16,7 +16,7 @@ class CreateAccountsTable extends Migration
         Schema::create('accounts', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 64);
-            $table->string('spotify_user_id', 100);
+            $table->string('spotify_account_id', 100);
             $table->timestamps();
         });
     }

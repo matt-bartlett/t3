@@ -32,7 +32,14 @@
                                         <td>{{ $playlist->owner_name }}</td>
                                         <td>{{ $playlist->tracks->count() }}</td>
                                         <td>{{ $playlist->created_at }}</td>
-                                        <td><a href="{{ route('admin.playlists.edit', $playlist->id) }}">Edit</a></td>
+                                        <td>
+                                            <a class="btn btn-sm btn-default" href="{{ route('admin.playlists.edit', $playlist->id) }}">Edit</a>
+                                            <form style="display: inline-block;" method="POST" action="{{ route('admin.playlists.destroy', $playlist->id) }}">
+                                                {{ csrf_field() }}
+                                                {{ method_field('DELETE') }}
+                                                <button class="btn btn-sm btn-danger">Delete</button>
+                                            </form>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>
