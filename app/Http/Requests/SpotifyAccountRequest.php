@@ -25,7 +25,7 @@ class SpotifyAccountRequest extends FormRequest
     {
         return [
             'name' => 'required|string',
-            'spotify_account_id' => 'required|alpha_num',
+            'spotify_account_id' => 'required|string',
         ];
     }
 

@@ -2,23 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
-use DB;
 use Exception;
 use App\Models\Account;
 use App\Models\Playlist;
-use App\T3\Spotify\Client;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PlaylistRequest;
+use App\T3\Services\CreatePlaylistService;
 use App\Http\Requests\SpotifyPlaylistRequest;
-use App\T3\Spotify\Transformers\PlaylistTransformer;
 
 class PlaylistController extends Controller
 {
-    /**
-     * @var App\T3\Spotify\Client
-     */
-    private $spotify;
-
     /**
      * @var App\Models\Playlist
      */
@@ -34,15 +27,13 @@ class PlaylistController extends Controller
      *
      * @param App\Models\Playlist $playlist
      * @param App\Models\Account $account
-     * @param App\T3\Spotiy\Client $spotify
      * @return void
      */
-    public function __construct(Account $account, Playlist $playlist, Client $spotify)
+    public function __construct(Account $account, Playlist $playlist)
     {
         $this->middleware('auth');
-        $this->playlist = $playlist;
-        $this->spotify = $spotify;
         $this->account = $account;
+        $this->playlist = $playlist;
     }
 
     /**
@@ -73,29 +64,13 @@ class PlaylistController extends Controller
      * Store a new Playlist
      *
      * @param App\Http\Requests\SpotifyPlaylistRequest $request
+     * @param App\T3\Services\CreatePlaylistService $service
      * @return Illuminate\Http\RedirectResponse
      */
-    public function store(SpotifyPlaylistRequest $request)
+    public function store(SpotifyPlaylistRequest $request, CreatePlaylistService $service)
     {
         try {
-            // Fetch the Playlist from Spotify
-            $playlist = $this->spotify->getApi()->getPlaylist(
-                $request->get('spotify_account_id'),
-                $request->get('spotify_playlist_id')
-            );
-
-            // Transform the Playlist to an array
-            $playlist = $this->spotify->transform($playlist, new PlaylistTransformer);
-
-            // Override the Playlist name if present
-            if ($request->get('name')) {
-                $playlist['name'] = $request->get('name');
-            }
-
-            // Save the Playlist
-            DB::transaction(function () use ($playlist) {
-                $this->playlist->create($playlist)->tracks()->createMany($playlist['tracks']);
-            });
+            $playlist = $service->make($request);
 
             return redirect()->route('admin.playlists.index');
         } catch (Exception $e) {

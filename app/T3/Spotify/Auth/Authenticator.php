@@ -33,6 +33,7 @@ class Authenticator
      * Construct the class
      *
      * @param App\T3\Spotify\Request $request
+     * @param Illuminate\Session\SessionManager $session
      * @return void
      */
     public function __construct(Request $request, SessionManager $session)
