@@ -25,7 +25,15 @@
                         <div class="form-group">
                             <label for="spotify_account_id" class="col-md-4 control-label">Spotify Account ID</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" id="spotify_account_id" name="spotify_account_id" value="{{ old('spotify_account_id') }}">
+                                @if ($accounts->count() > 0)
+                                    <select id="spotify_account_id" name="spotify_account_id" class="form-control">
+                                        @foreach ($accounts as $account)
+                                            <option value="{{ $account->spotify_account_id }}">{{ $account->name }}</option>
+                                        @endforeach
+                                    </select>
+                                @else
+                                        <input type="text" class="form-control" id="spotify_account_id" name="spotify_account_id" value="{{ old('spotify_account_id') }}">
+                                @endif
                             </div>
                         </div>
 

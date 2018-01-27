@@ -57,15 +57,11 @@ class AccountController extends Controller
      */
     public function store(SpotifyAccountRequest $request)
     {
-        try {
-            $account = $this->account->create(
-                $request->only('name', 'spotify_account_id')
-            );
+        $account = $this->account->create(
+            $request->only('name', 'spotify_account_id')
+        );
 
-            return redirect()->route('admin.accounts.index');
-        } catch (Exception $e) {
-            return back()->withErrors($e->getMessage());
-        }
+        return redirect()->route('admin.accounts.index');
     }
 
     /**

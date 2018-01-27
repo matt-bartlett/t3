@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use DB;
 use Exception;
+use App\Models\Account;
 use App\Models\Playlist;
 use App\T3\Spotify\Client;
 use App\Http\Controllers\Controller;
@@ -24,17 +25,24 @@ class PlaylistController extends Controller
     private $playlist;
 
     /**
+     * @var App\Models\Account
+     */
+    private $account;
+
+    /**
      * Create a new controller instance.
      *
      * @param App\Models\Playlist $playlist
+     * @param App\Models\Account $account
      * @param App\T3\Spotiy\Client $spotify
      * @return void
      */
-    public function __construct(Playlist $playlist, Client $spotify)
+    public function __construct(Account $account, Playlist $playlist, Client $spotify)
     {
         $this->middleware('auth');
         $this->playlist = $playlist;
         $this->spotify = $spotify;
+        $this->account = $account;
     }
 
     /**
@@ -56,7 +64,9 @@ class PlaylistController extends Controller
      */
     public function create()
     {
-        return view('admin/playlists/create');
+        $accounts = $this->account->get();
+
+        return view('admin/playlists/create', compact('accounts'));
     }
 
     /**
