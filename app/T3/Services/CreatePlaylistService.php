@@ -5,8 +5,8 @@ namespace App\T3\Services;
 use DB;
 use App\Models\Playlist;
 use App\T3\Spotify\Client;
-use App\Http\Requests\SpotifyPlaylistRequest;
 use Illuminate\Http\Request;
+use App\Http\Requests\SpotifyPlaylistRequest;
 use App\T3\Spotify\Transformers\PlaylistTransformer;
 
 class CreatePlaylistService implements Service

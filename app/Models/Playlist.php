@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Track;
+use App\Models\Account;
 use Illuminate\Database\Eloquent\Model;
 
 class Playlist extends Model
@@ -29,6 +30,14 @@ class Playlist extends Model
     }
 
     /**
+     * Eloquent relationship where Account belongs-to a Playlist
+     */
+    public function account()
+    {
+        return $this->belongsTo(Account::class, 'owner_id', 'spotify_account_id');
+    }
+
+    /**
      * Define an attribute on a Playlist to return the total playlist duration
      *
      * @return integer
@@ -41,21 +50,15 @@ class Playlist extends Model
     }
 
     /**
-     * Since the Spotify API doesn't return the playlist creators name,
-     * we can create an additional model attribute which maps the
-     * Spotify User ID to a known creator name, if it exists.
+     * Return the Account display name if a relationship exists, else
+     * return the Owner ID from Spotify
      *
      * @return string
      */
     public function getOwnerNameAttribute()
     {
-        $owners = [
-            '1196791157' => 'Matt Bartlett',
-            'robert.mark.jones' => 'Mark Jones'
-        ];
-
-        if (isset($owners[$this->owner_id])) {
-            return $owners[$this->owner_id];
+        if ($this->account) {
+            return $owner = $this->account->name;
         }
 
         return $this->owner_id;

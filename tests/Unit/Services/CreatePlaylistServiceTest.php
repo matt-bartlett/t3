@@ -29,9 +29,6 @@ class CreatePlaylistServiceTest extends TestCase
             ->setMethods(array('getApi'))
             ->getMock();
 
-        // Authenticator Mock
-        $authenticatorMock = $this->createMock(Authenticator::class);
-
         // API Mock
         $apiMock = $this->getMockBuilder(API::class)
             ->disableOriginalConstructor()

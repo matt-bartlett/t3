@@ -17,7 +17,7 @@ class TrackController extends Controller
     /**
      * Initialise the controller
      *
-     * @param App\Track\Playlist $track
+     * @param App\Models\Track $track
      */
     public function __construct(Track $track)
     {

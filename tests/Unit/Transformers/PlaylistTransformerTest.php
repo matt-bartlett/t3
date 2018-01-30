@@ -5,9 +5,13 @@ namespace Tests\Unit\Transformers;
 use Tests\TestCase;
 use App\Models\Playlist;
 use App\T3\Transformers\PlaylistTransformer;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class PlaylistTransformerTest extends TestCase
 {
+    use DatabaseTransactions, WithoutMiddleware;
+
     public $playlist;
 
     public function setUp()

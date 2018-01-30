@@ -5,9 +5,13 @@ namespace Tests\Unit\Transformers;
 use Tests\TestCase;
 use App\Models\Track;
 use App\T3\Transformers\TrackTransformer;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class TrackTransformerTest extends TestCase
 {
+    use DatabaseTransactions, WithoutMiddleware;
+
     /**
      * @return void
      */
