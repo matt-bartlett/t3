@@ -92,7 +92,7 @@ return [
         'notifiable' => \Spatie\Backup\Notifications\Notifiable::class,
 
         'mail' => [
-            'to' => getenv('MAIL_ALERT_ADDRESS'),
+            // 'to' => getenv('MAIL_ALERT_ADDRESS'),
         ],
 
         'slack' => [
