@@ -33,3 +33,18 @@ $factory->define(App\Models\Track::class, function (Faker\Generator $faker) {
         'spotify_thumbnail_url' => $faker->domainName
     ];
 });
+
+$factory->define(App\Models\User::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->name,
+        'email' => $faker->email,
+        'password' => bcrypt($faker->password),
+    ];
+});
+
+$factory->define(App\Models\Account::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->name,
+        'spotify_account_id' => $faker->userName
+    ];
+});

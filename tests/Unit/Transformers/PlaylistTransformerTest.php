@@ -31,7 +31,7 @@ class PlaylistTransformerTest extends TestCase
                 'name' => 'T3 Playlist #1',
                 'owner' => '1196791157',
                 'duration' => 0,
-                'owner_name' => 'Matt Bartlett',
+                'owner_name' => '1196791157',
                 'playlist_url' => 'https://api.spotify.com/playlist/123456789',
                 'owner_profile_url' => 'https://api.spotify/com/user/1196791157',
                 'playlist_thumbnail_url' => 'https://mosaic.scdn.co/640/123456789'

@@ -42,9 +42,8 @@ class PlaylistTest extends TestCase
 
         $response = $this->json('GET', 'api/playlists/' . $playlist->id)
             ->assertStatus(200)
-            ->assertJsonFragment(['name' => 'T3 Playlist #1']);
-
-        $response = $response->decodeResponseJson();
+            ->assertJsonFragment(['name' => 'T3 Playlist #1'])
+            ->decodeResponseJson();
 
         $this->assertCount(3, $response['data']['tracks']['data']);
     }

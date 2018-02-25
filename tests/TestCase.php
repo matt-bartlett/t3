@@ -18,4 +18,13 @@ abstract class TestCase extends BaseTestCase
     {
         return unserialize(file_get_contents(__DIR__ . '/Unit/Fixtures/' . $path));
     }
+
+    protected function loginAsUser()
+    {
+        $user = factory(\App\Models\User::class)->create();
+
+        $this->actingAs($user);
+
+        return $this;
+    }
 }

@@ -39,14 +39,12 @@ class TrackTest extends TestCase
         );
 
         // Attempt to find the arist with invalid search criteria
-        $response = $this->json('GET', 'api/search/', ['q' => 'Some random artist']);
-        $response->assertStatus(200);
-
-        // Decode JSON resposne to an array
-        $decodedResponse = $response->decodeResponseJson();
+        $response = $this->json('GET', 'api/search/', ['q' => 'Some random artist'])
+            ->assertStatus(200)
+            ->decodeResponseJson();
 
         // Assert an empty set of results
-        $this->assertCount(0, $decodedResponse['data']);
+        $this->assertCount(0, $response['data']);
     }
 
     /**
@@ -65,15 +63,13 @@ class TrackTest extends TestCase
         );
 
         // Attempt to find the arist with invalid search criteria
-        $response = $this->json('GET', 'api/search/', ['q' => 'Run DMC']);
-        $response->assertStatus(200);
-
-        // Decode JSON resposne to an array
-        $decodedResponse = $response->decodeResponseJson();
+        $response = $this->json('GET', 'api/search/', ['q' => 'Run DMC'])
+            ->assertStatus(200)
+            ->decodeResponseJson();
 
         // Assert on results
-        $this->assertCount(1, $decodedResponse['data']);
-        $this->assertEquals('Run DMC', $decodedResponse['data'][0]['artist']);
+        $this->assertCount(1, $response['data']);
+        $this->assertEquals('Run DMC', $response['data'][0]['artist']);
     }
 
     /**
@@ -92,13 +88,11 @@ class TrackTest extends TestCase
         );
 
         // Attempt to find the arist with invalid search criteria
-        $response = $this->json('GET', 'api/search/', ['q' => 'Deep Dish']);
-        $response->assertStatus(200);
-
-        // Decode JSON resposne to an array
-        $decodedResponse = $response->decodeResponseJson();
+        $response = $this->json('GET', 'api/search/', ['q' => 'Deep Dish'])
+            ->assertStatus(200)
+            ->decodeResponseJson();
 
         // Assert on results
-        $this->assertEquals('T3 Playlist #1', $decodedResponse['data'][0]['playlist']['data']['name']);
+        $this->assertEquals('T3 Playlist #1', $response['data'][0]['playlist']['data']['name']);
     }
 }

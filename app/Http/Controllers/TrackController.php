@@ -46,6 +46,6 @@ class TrackController extends Controller
             ->includePlaylist()
             ->toArray();
 
-        return $tracks;
+        return response()->json($tracks);
     }
 }
