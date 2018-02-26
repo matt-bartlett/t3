@@ -22,7 +22,7 @@ class StatsTest extends TestCase
             ->tracks()
             ->saveMany(
                 factory(Track::class, 30)->make([
-                    'duration' => 1000
+                    'duration' => 20000
                 ])
             );
 
@@ -30,6 +30,6 @@ class StatsTest extends TestCase
 
         $this->assertEquals($response['data']['PlaylistCount'], 1);
         $this->assertEquals($response['data']['TrackCount'], 30);
-        $this->assertEquals($response['data']['AllTrackDuration'], 30000);
+        $this->assertEquals($response['data']['AllTrackDuration'], 10);
     }
 }

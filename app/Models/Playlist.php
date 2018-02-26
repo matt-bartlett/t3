@@ -44,9 +44,7 @@ class Playlist extends Model
      */
     public function getDurationAttribute()
     {
-        $duration = $this->getTotalDuration();
-
-        return floor(($duration / 1000) / 60);
+        return app('PlaylistDurationFormatter')->format($this->tracks);
     }
 
     /**
@@ -58,23 +56,9 @@ class Playlist extends Model
     public function getOwnerNameAttribute()
     {
         if ($this->account) {
-            return $owner = $this->account->name;
+            return $this->account->name;
         }
 
         return $this->owner_id;
-    }
-
-    /**
-     * Calculate the total duration of all tracks within a playlist
-     *
-     * @return integer
-     */
-    private function getTotalDuration()
-    {
-        $total = $this->tracks->reduce(function ($carry, $track) {
-            return $carry + $track->duration;
-        }, 0);
-
-        return $total;
     }
 }

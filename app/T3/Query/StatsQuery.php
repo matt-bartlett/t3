@@ -24,6 +24,9 @@ class StatsQuery
             ->join('tracks', 'tracks.playlist_id', '=', 'playlists.id')
             ->first();
 
+        $contributionStats->AllTrackDuration = app('TrackDurationFormatter')
+            ->formatToMinutes($contributionStats->AllTrackDuration);
+
         return $contributionStats;
     }
 }

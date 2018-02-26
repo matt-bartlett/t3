@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App;
 use App\Models\Playlist;
 use Illuminate\Database\Eloquent\Model;
 
@@ -39,17 +40,7 @@ class Track extends Model
      */
     public function getDurationFormattedAttribute()
     {
-        $duration = $this->duration;
-
-        $seconds = floor($duration / 1000) % 60;
-
-        if (strlen($seconds) == 1) {
-            $seconds = '0' . $seconds;
-        }
-
-        $minutes = floor(($duration / 1000) / 60) % 60;
-
-        return $minutes . ':' . $seconds;
+        return app('TrackDurationFormatter')->format($this->duration);
     }
 
     /**
