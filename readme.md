@@ -1,10 +1,10 @@
 # ThrowTogetherThursdays
 Public API storing all Spotify playlists from T3. May later add a backend for managing playlists you no longer want clogging up your Spotify.
 
-### Docs
+# Docs
 The API consists of 3 end-points.
 
-Fetch all Playlists, paginated at 15 results.
+Fetch all Playlists, paginated at 24 results.
 
 ```php
 http://<domain>/api/playlists
@@ -19,8 +19,3 @@ Search for Tracks, Artists or Albums
 ```php
 http://<domain>/api/search?q=<searchterm>
 ```
-
-### Things To Do (Nice to haves)
-- [x] - Add Tests for Track/Artist/Album search endpoint
-- [x] - Add an auth-guarded section for easily pulling playlists from Spotify
-- [] - Add an auth-guarded section of allowed Spotify users to have their playlists shown
