@@ -2,10 +2,34 @@
 
 namespace App\T3\Query;
 
-use DB;
+use stdClass;
+use App\Models\Track;
+use App\Models\Playlist;
 
 class StatsQuery
 {
+    /**
+     * @var App\Models\Track
+     */
+    private $track;
+
+    /**
+     * @var App\Models\Playlist
+     */
+    private $playlist;
+
+    /**
+     * Create a new class instance.
+     *
+     * @param App\Models\Track $track
+     * @param App\Models\Playlist $playlist
+     */
+    public function __construct(Track $track, Playlist $playlist)
+    {
+        $this->track = $track;
+        $this->playlist = $playlist;
+    }
+
     /**
      * Collect contribution statistics which include the total
      * amount of Playlists & Tracks added, as well as the 
@@ -15,14 +39,14 @@ class StatsQuery
      */
     public function getContributionStats()
     {
-        $contributionStats = DB::table('playlists')
-            ->selectRaw('
-                COUNT(distinct(playlists.id)) as PlaylistCount,
-                COUNT(tracks.id) as TrackCount,
-                SUM(tracks.duration) as AllTrackDuration
-            ')
-            ->join('tracks', 'tracks.playlist_id', '=', 'playlists.id')
-            ->first();
+        $totalTracks = $this->track->select(['id'])->count();
+        $trackDuration = $this->track->select(['duration'])->sum('duration');
+        $totalPlaylists = $this->playlist->select(['id'])->count();
+
+        $contributionStats = new stdClass;
+        $contributionStats->TrackCount = $totalTracks;
+        $contributionStats->PlaylistCount = $totalPlaylists;
+        $contributionStats->AllTrackDuration = $trackDuration;
 
         $contributionStats->AllTrackDuration = app('TrackDurationFormatter')
             ->formatToMinutes($contributionStats->AllTrackDuration);

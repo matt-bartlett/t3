@@ -3,6 +3,8 @@
 namespace App\T3\Services;
 
 use DB;
+use Exception;
+use App\Models\Track;
 use App\Models\Playlist;
 use App\T3\Spotify\Client;
 use Illuminate\Http\Request;
@@ -12,9 +14,9 @@ use App\T3\Spotify\Transformers\PlaylistTransformer;
 class CreatePlaylistService implements Service
 {
     /**
-     * @var App\T3\Spotify\Client
+     * @var App\Models\Track
      */
-    private $spotify;
+    private $track;
 
     /**
      * @var App\Models\Playlist
@@ -22,16 +24,23 @@ class CreatePlaylistService implements Service
     private $playlist;
 
     /**
+     * @var App\T3\Spotify\Client
+     */
+    private $spotify;
+
+    /**
      * Create a new class instance.
      *
+     * @param App\Models\Track $track
      * @param App\Models\Playlist $playlist
      * @param App\T3\Spotify\Client $spotify
      * @return void
      */
-    public function __construct(Playlist $playlist, Client $spotify)
+    public function __construct(Track $track, Playlist $playlist, Client $spotify)
     {
-        $this->spotify = $spotify;
+        $this->track = $track;
         $this->playlist = $playlist;
+        $this->spotify = $spotify;
     }
 
     /**
@@ -58,8 +67,36 @@ class CreatePlaylistService implements Service
         }
 
         // Save the Playlist
+        $createdPlaylist = $this->createPlaylist($playlist);
+
+        return $createdPlaylist;
+    }
+
+    /**
+     * Transactionally attempt to save the Playlist and attach
+     * new or existing Tracks to the Playlist.
+     *
+     * @param array $playlist
+     * @return array
+     * @throws Exception
+     */
+    private function createPlaylist(array $playlist)
+    {
         DB::transaction(function () use ($playlist) {
-            $this->playlist->create($playlist)->tracks()->createMany($playlist['tracks']);
+            $created = $this->playlist->create($playlist);
+
+            foreach ($playlist['tracks'] as $track) {
+                // Find Track with matching Spotify ID
+                $duplicate = $this->track->where('spotify_track_id', $track['spotify_track_id'])->first();
+
+                if ($duplicate) {
+                    // Track exists, attach it to the new playlist
+                    $created->tracks()->attach($duplicate);
+                } else {
+                    // Track doesn't exist, create new
+                    $this->track->create($track)->playlists()->attach($created);
+                }
+            }
         });
 
         return $playlist;

@@ -18,18 +18,19 @@ class StatsTest extends TestCase
      */
     public function test_stats_generation()
     {
-        factory(Playlist::class)->create()
-            ->tracks()
-            ->saveMany(
-                factory(Track::class, 30)->make([
-                    'duration' => 20000
-                ])
-            );
+        $tracks = factory(Track::class, 30)->create([
+            'duration' => 20000
+        ]);
+
+        $playlist = factory(Playlist::class)->create();
+
+        // Attach all Tracks to Playlist
+        $playlist->tracks()->attach($tracks->pluck('id'));
 
         $response = $this->json('GET', 'api/stats')->decodeResponseJson();
 
-        $this->assertEquals($response['data']['PlaylistCount'], 1);
-        $this->assertEquals($response['data']['TrackCount'], 30);
-        $this->assertEquals($response['data']['AllTrackDuration'], 10);
+        $this->assertEquals($response['data']['total_playlist_count'], 1);
+        $this->assertEquals($response['data']['total_track_count'], 30);
+        $this->assertEquals($response['data']['total_track_duration'], 10);
     }
 }

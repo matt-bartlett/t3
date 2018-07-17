@@ -4,6 +4,7 @@ namespace Tests\Unit\Services;
 
 use DB;
 use Tests\TestCase;
+use App\Models\Track;
 use App\Models\Playlist;
 use App\T3\Spotify\API;
 use App\T3\Spotify\Client;
@@ -20,8 +21,11 @@ class CreatePlaylistServiceTest extends TestCase
      */
     public function setUp()
     {
+        // Track Mock
+        $trackMock = $this->createMock(Track::class);
+
         // Playlist Mock
-        $playlist = $this->createMock(Playlist::class);
+        $playlistMock = $this->createMock(Playlist::class);
 
         // Client Mock
         $clientMock = $this->getMockBuilder(Client::class)
@@ -44,7 +48,7 @@ class CreatePlaylistServiceTest extends TestCase
             ->method('getApi')
             ->willReturn($apiMock);
 
-        $this->service = new CreatePlaylistService($playlist, $clientMock);
+        $this->service = new CreatePlaylistService($trackMock, $playlistMock, $clientMock);
 
         parent::setUp();
     }

@@ -40,10 +40,10 @@ class TrackController extends Controller
             throw new BadRequestHttpException('Query term not specified for searching');
         }
 
-        $tracks = $this->track->with('playlist')->search($query)->get();
+        $tracks = $this->track->with('playlists')->search($query)->get();
 
         $tracks = fractal($tracks, new TrackTransformer)
-            ->includePlaylist()
+            ->includePlaylists()
             ->toArray();
 
         return response()->json($tracks);

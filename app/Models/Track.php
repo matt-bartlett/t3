@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App;
 use App\Models\Playlist;
 use Illuminate\Database\Eloquent\Model;
 
@@ -14,7 +13,6 @@ class Track extends Model
      * @var array
      */
     protected $fillable = [
-        'playlist_id',
         'title',
         'artist',
         'album',
@@ -26,11 +24,11 @@ class Track extends Model
     ];
 
     /**
-     * Eloquent relationship where Track belongs-to a Playlist
+     * Eloquent relationship where Track has-many Playlist
      */
-    public function playlist()
+    public function playlists()
     {
-        return $this->belongsTo(Playlist::class);
+        return $this->belongsToMany(Playlist::class)->withTimestamps();
     }
 
     /**

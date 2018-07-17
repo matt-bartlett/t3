@@ -26,15 +26,15 @@ class Playlist extends Model
      */
     public function tracks()
     {
-        return $this->hasMany(Track::class);
+        return $this->belongsToMany(Track::class)->withTimestamps();
     }
 
     /**
-     * Eloquent relationship where Account belongs-to a Playlist
+     * Eloquent relationship where Playlist has-one Account
      */
     public function account()
     {
-        return $this->belongsTo(Account::class, 'owner_id', 'spotify_account_id');
+        return $this->hasOne(Account::class, 'spotify_account_id', 'owner_id');
     }
 
     /**

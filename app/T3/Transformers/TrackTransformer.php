@@ -15,7 +15,7 @@ class TrackTransformer extends TransformerAbstract
      * @var array
      */
     protected $availableIncludes = [
-        'playlist'
+        'playlists'
     ];
 
     /**
@@ -45,11 +45,11 @@ class TrackTransformer extends TransformerAbstract
      * @param App\Models\Track $track
      * @return League\Fractal\Resource\Item
      */
-    public function includePlaylist(Track $track)
+    public function includePlaylists(Track $track)
     {
-        $playlist = $track->playlist;
+        $playlists = $track->playlists()->get();
 
-        $resource = $this->item($playlist, new PlaylistTransformer);
+        $resource = ($this->collection($playlists, new PlaylistTransformer));
 
         return $resource;
     }

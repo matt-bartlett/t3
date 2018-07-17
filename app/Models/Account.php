@@ -14,4 +14,12 @@ class Account extends Model
     protected $fillable = [
         'name', 'spotify_account_id',
     ];
+
+    /**
+     * Eloquent relationship where Account belongs-to a Playlist
+     */
+    public function playlist()
+    {
+        return $this->belongsTo(Account::class, 'owner_id', 'spotify_account_id');
+    }
 }

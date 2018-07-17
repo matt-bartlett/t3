@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddCascadeOnDeleteToTracksTable extends Migration
+class CreatePlaylistTrackTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,13 @@ class AddCascadeOnDeleteToTracksTable extends Migration
      */
     public function up()
     {
-        Schema::table('tracks', function (Blueprint $table) {
+        Schema::create('playlist_track', function (Blueprint $table) {
+            $table->integer('playlist_id')->unsigned()->index();
             $table->foreign('playlist_id')->references('id')->on('playlists')->onDelete('cascade');
+
+            $table->integer('track_id')->unsigned()->index();
+            $table->foreign('track_id')->references('id')->on('tracks')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +30,6 @@ class AddCascadeOnDeleteToTracksTable extends Migration
      */
     public function down()
     {
-        Schema::table('tracks', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('playlist_track');
     }
 }

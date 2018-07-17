@@ -2,6 +2,7 @@
 
 namespace Tests\Unit\Spotify\Auth;
 
+use stdClass;
 use Tests\TestCase;
 use GuzzleHttp\Client;
 use App\T3\Spotify\Http\Request;
@@ -145,7 +146,7 @@ class AuthenticationTest extends TestCase
      */
     private function authenticationResponse()
     {
-        $authenticationResponse = new \StdClass;
+        $authenticationResponse = new stdClass;
         $authenticationResponse->expires_in = 3600;
         $authenticationResponse->access_token = 'nui24BhaUI4anHA';
 

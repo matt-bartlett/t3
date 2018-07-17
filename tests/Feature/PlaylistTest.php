@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 use App\Models\Track;
+use App\Models\Account;
 use App\Models\Playlist;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
@@ -36,9 +37,10 @@ class PlaylistTest extends TestCase
             'name' => 'T3 Playlist #1'
         ]);
 
-        $playlist->tracks()->saveMany(
-            factory(Track::class, 3)->make()
-        );
+        $tracks = factory(Track::class, 3)->create();
+
+        // Attach all Tracks to Playlist
+        $playlist->tracks()->attach($tracks->pluck('id'));
 
         $response = $this->json('GET', 'api/playlists/' . $playlist->id)
             ->assertStatus(200)
@@ -46,6 +48,31 @@ class PlaylistTest extends TestCase
             ->decodeResponseJson();
 
         $this->assertCount(3, $response['data']['tracks']['data']);
+    }
+
+    /**
+     * @return void
+     */
+    public function test_user_account_name_appears_on_playlist()
+    {
+        $playlist = factory(Playlist::class)->create([
+            'name' => 'T3 Playlist #1',
+            'owner_id' => '123xyz789'
+        ]);
+
+        $account = factory(Account::class)->make([
+            'name' => 'Matt Bartlett',
+            'spotify_account_id' => '123xyz789'
+        ]);
+
+        $playlist->account()->save($account);
+
+        $response = $this->json('GET', 'api/playlists/' . $playlist->id)
+            ->assertStatus(200)
+            ->assertJsonFragment(['name' => 'T3 Playlist #1'])
+            ->decodeResponseJson();
+
+        $this->assertEquals('Matt Bartlett', $response['data']['owner_name']);
     }
 
     /**

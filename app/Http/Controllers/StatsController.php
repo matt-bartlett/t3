@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\T3\Query\StatsQuery;
+use App\T3\Transformers\StatsTransformer;
 
 class StatsController extends Controller
 {
@@ -29,8 +30,10 @@ class StatsController extends Controller
      */
     public function index()
     {
-        $stats = $this->query->getContributionStats();
+        $data = $this->query->getContributionStats();
 
-        return response()->json(['data' => $stats]);
+        $stats = fractal($data, new StatsTransformer)->toArray();
+
+        return response()->json($stats);
     }
 }

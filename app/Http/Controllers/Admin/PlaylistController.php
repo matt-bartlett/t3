@@ -70,7 +70,8 @@ class PlaylistController extends Controller
     public function store(SpotifyPlaylistRequest $request, CreatePlaylistService $service)
     {
         try {
-            $playlist = $service->make($request);
+            // Create Playlist based on input data
+            $service->make($request);
 
             return redirect()->route('admin.playlists.index');
         } catch (Exception $e) {

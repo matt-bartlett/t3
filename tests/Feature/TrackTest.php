@@ -32,11 +32,12 @@ class TrackTest extends TestCase
             'name' => 'T3 Playlist #1'
         ]);
 
-        $playlist->tracks()->save(
-            factory(Track::class)->make([
-                'artist' => 'Run DMC'
-            ])
-        );
+        $track = factory(Track::class)->create([
+            'artist' => 'Run DMC'
+        ]);
+
+        // Attach Track to Playlist
+        $playlist->tracks()->attach($track->id);
 
         // Attempt to find the arist with invalid search criteria
         $response = $this->json('GET', 'api/search/', ['q' => 'Some random artist'])
@@ -56,11 +57,12 @@ class TrackTest extends TestCase
             'name' => 'T3 Playlist #1'
         ]);
 
-        $playlist->tracks()->save(
-            factory(Track::class)->make([
-                'artist' => 'Run DMC'
-            ])
-        );
+        $track = factory(Track::class)->create([
+            'artist' => 'Run DMC'
+        ]);
+
+        // Attach Track to Playlist
+        $playlist->tracks()->attach($track->id);
 
         // Attempt to find the arist with invalid search criteria
         $response = $this->json('GET', 'api/search/', ['q' => 'Run DMC'])
@@ -81,11 +83,12 @@ class TrackTest extends TestCase
             'name' => 'T3 Playlist #1'
         ]);
 
-        $playlist->tracks()->save(
-            factory(Track::class)->make([
-                'artist' => 'Deep Dish'
-            ])
-        );
+        $track = factory(Track::class)->create([
+            'artist' => 'Deep Dish'
+        ]);
+
+        // Attach Track to Playlist
+        $playlist->tracks()->attach($track->id);
 
         // Attempt to find the arist with invalid search criteria
         $response = $this->json('GET', 'api/search/', ['q' => 'Deep Dish'])
@@ -93,6 +96,28 @@ class TrackTest extends TestCase
             ->decodeResponseJson();
 
         // Assert on results
-        $this->assertEquals('T3 Playlist #1', $response['data'][0]['playlist']['data']['name']);
+        $this->assertEquals('T3 Playlist #1', $response['data'][0]['playlists']['data'][0]['name']);
+    }
+
+    /**
+     * @return void
+     */
+    public function test_searching_tracks_returns_multiple_associated_playlists()
+    {
+        $playlists = factory(Playlist::class, 2)->create();
+
+        $track = factory(Track::class)->create([
+            'artist' => 'Long Way Home'
+        ]);
+
+        // Attach Playlists to Track
+        $track->playlists()->attach($playlists->pluck('id'));
+
+        // Attempt to find the arist with invalid search criteria
+        $response = $this->json('GET', 'api/search/', ['q' => 'Long Way Home'])
+            ->assertStatus(200)
+            ->decodeResponseJson();
+
+        $this->assertCount(2, $response['data'][0]['playlists']['data']);
     }
 }
