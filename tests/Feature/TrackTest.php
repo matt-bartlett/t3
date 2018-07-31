@@ -107,14 +107,14 @@ class TrackTest extends TestCase
         $playlists = factory(Playlist::class, 2)->create();
 
         $track = factory(Track::class)->create([
-            'artist' => 'Long Way Home'
+            'artist' => 'Long Way Homewards'
         ]);
 
         // Attach Playlists to Track
         $track->playlists()->attach($playlists->pluck('id'));
 
         // Attempt to find the arist with invalid search criteria
-        $response = $this->json('GET', 'api/search/', ['q' => 'Long Way Home'])
+        $response = $this->json('GET', 'api/search/', ['q' => 'Long Way Homewards'])
             ->assertStatus(200)
             ->decodeResponseJson();
 

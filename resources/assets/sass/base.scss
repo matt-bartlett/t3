@@ -1,26 +1,62 @@
 html, body {
-	font-weight: 300;
-	font-family: 'Open Sans', sans-serif
+  font-size: 14px;
+  font-weight: 300;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #F9F9F9;
 }
 
 .alert.alert-danger > p {
-	margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .alert.alert-panel-info {
-    background-color: #f5f5f5;
-    border-color: #ddd;
-    color: #333333;
+  background-color: #F5F5F5;
+  border-color: #DDD;
+  color: #333333;
 }
 
-.panel > .panel-heading {
-	min-height: 55px;
+.navbar {
+  background-color: #FFF;
+  border-color: #F5F5F5;
 }
 
-.panel > .panel-heading > .panel-title {
-	margin-top: 7.5px;
+.table {
+  thead {
+    tr {
+      td {
+        text-transform: uppercase;
+        color: #B9B9B9;
+        font-size: 0.925rem;
+        padding: 10px 0px;
+        font-weight: 400;
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      td {
+        vertical-align: middle;
+        padding: 10px 0px;
+        font-size: 0.925rem;
+        border-top: 1px solid #F5F5F5;
+      }
+    }
+
+    &:first-child {
+      td {
+        border-top: none;
+      }
+    }
+  }
 }
 
-.table > tbody > tr > td {
-	vertical-align: middle;
+.btn-primary {
+  border-color: #343B4D;
+  background-color: #343B4D;
+}
+
+.pagination > .active > span {
+  border-color: #343b4d;
+  background-color: #343B4D;
 }

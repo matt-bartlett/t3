@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use Tests\TestCase;
 use App\Models\Track;
 use App\Models\Playlist;
+use App\T3\Query\StatsQuery;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
@@ -12,6 +13,21 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 class StatsTest extends TestCase
 {
     use DatabaseTransactions, WithoutMiddleware;
+
+    /**
+     * @var StatsQuery
+     */
+    private $query;
+
+    /**
+     * @return void
+     */
+    public function setUp()
+    {
+        $this->query = app(StatsQuery::class);
+
+        parent::setUp();
+    }
 
     /**
      * @return void
@@ -29,8 +45,11 @@ class StatsTest extends TestCase
 
         $response = $this->json('GET', 'api/stats')->decodeResponseJson();
 
-        $this->assertEquals($response['data']['total_playlist_count'], 1);
-        $this->assertEquals($response['data']['total_track_count'], 30);
-        $this->assertEquals($response['data']['total_track_duration'], 10);
+        // Get statistics for assertions
+        $stats = $this->query->getContributionStats();
+
+        $this->assertEquals($response['data']['total_playlist_count'], $stats->PlaylistCount);
+        $this->assertEquals($response['data']['total_track_count'], $stats->TrackCount);
+        $this->assertEquals($response['data']['total_track_duration'], $stats->AllTrackDuration);
     }
 }

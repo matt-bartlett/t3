@@ -6,7 +6,7 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h5 class="panel-title">Create Spotify User</h5>
+                    <h5 class="panel-title">Create New Account</h5>
                 </div>
                 <div class="panel-body">
 

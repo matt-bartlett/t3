@@ -29,11 +29,11 @@ class PlaylistTransformerTest extends TestCase
             'data' => array(
                 'id' => 999,
                 'name' => 'T3 Playlist #1',
-                'owner' => '1196791157',
+                'owner' => '999999999',
                 'duration' => 0,
-                'owner_name' => '1196791157',
+                'owner_name' => '999999999',
                 'playlist_url' => 'https://api.spotify.com/playlist/123456789',
-                'owner_profile_url' => 'https://api.spotify/com/user/1196791157',
+                'owner_profile_url' => 'https://api.spotify/com/user/999999999',
                 'playlist_thumbnail_url' => 'https://mosaic.scdn.co/640/123456789'
             )
         );
@@ -41,8 +41,8 @@ class PlaylistTransformerTest extends TestCase
         $playlist = new Playlist;
         $playlist->id = 999;
         $playlist->name = 'T3 Playlist #1';
-        $playlist->owner_id = '1196791157';
-        $playlist->owner_profile_url = 'https://api.spotify/com/user/1196791157';
+        $playlist->owner_id = '999999999';
+        $playlist->owner_profile_url = 'https://api.spotify/com/user/999999999';
         $playlist->playlist_url = 'https://api.spotify.com/playlist/123456789';
         $playlist->playlist_thumbnail_url = 'https://mosaic.scdn.co/640/123456789';
 

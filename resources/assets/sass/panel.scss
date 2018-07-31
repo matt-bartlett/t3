@@ -1,0 +1,20 @@
+.panel {
+
+  &.panel-default {
+    border-color: #EEE;
+  }
+  .panel-heading {
+    min-height: 55px;
+    border-color: transparent;
+    background-color: #FFF;
+    padding: 10px 25px;
+
+    .panel-title {
+      margin-top: 7.5px;
+    }
+  }
+
+  .panel-body {
+    padding: 25px;
+  }
+}

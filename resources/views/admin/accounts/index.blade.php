@@ -8,16 +8,16 @@
                 <div class="panel-heading clearfix">
                     <h5 class="panel-title pull-left">Spotify Accounts</h5>
                     <div class="btn-group pull-right">
-                        <a class="btn btn-default" href="{{ route('admin.accounts.create') }}">Create</a>
+                        <a class="btn btn-primary" href="{{ route('admin.accounts.create') }}">Create New Account</a>
                     </div>
                 </div>
                 <div class="panel-body">
                     @if ($accounts->count() > 0)
-                        <table class="table table-striped">
+                        <table class="table">
                             <thead>
                                 <tr>
                                     <td>Name</td>
-                                    <td>Spotify ID</td>
+                                    <td class="text-center">Spotify ID</td>
                                     <td></td>
                                 </tr>
                             </thead>
@@ -25,8 +25,8 @@
                                 @foreach ($accounts as $account)
                                     <tr>
                                         <td>{{ $account->name }}</td>
-                                        <td>{{ $account->spotify_account_id }}</td>
-                                        <td>
+                                        <td class="text-center">{{ $account->spotify_account_id }}</td>
+                                        <td class="text-right">
                                             <a class="btn btn-sm btn-default" href="{{ route('admin.accounts.edit', $account->id) }}">Edit</a>
                                             <form style="display: inline-block;" method="POST" action="{{ route('admin.accounts.destroy', $account->id) }}">
                                                 {{ csrf_field() }}

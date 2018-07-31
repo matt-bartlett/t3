@@ -8,19 +8,19 @@
                 <div class="panel-heading clearfix">
                     <h5 class="panel-title pull-left">Playlists</h5>
                     <div class="btn-group pull-right">
-                        <a class="btn btn-default" href="{{ route('admin.playlists.create') }}">Create</a>
+                        <a class="btn btn-primary" href="{{ route('admin.playlists.create') }}">Create New Playlist</a>
                     </div>
                 </div>
                 <div class="panel-body">
                     @if ($playlists->count() > 0)
-                        <table class="table table-striped">
+                        <table class="table">
                             <thead>
                                 <tr>
                                     <td>ID</td>
                                     <td>Name</td>
-                                    <td>Owner</td>
-                                    <td>Tracks</td>
-                                    <td>Created</td>
+                                    <td class="text-center">Owner</td>
+                                    <td class="text-center">Tracks</td>
+                                    <td class="text-center">Created</td>
                                     <td></td>
                                 </tr>
                             </thead>
@@ -29,10 +29,10 @@
                                     <tr>
                                         <td>{{ $playlist->id }}</td>
                                         <td>{{ $playlist->name }}</td>
-                                        <td>{{ $playlist->owner_name }}</td>
-                                        <td>{{ $playlist->tracks->count() }}</td>
-                                        <td>{{ $playlist->created_at }}</td>
-                                        <td>
+                                        <td class="text-center">{{ $playlist->owner_name }}</td>
+                                        <td class="text-center">{{ $playlist->tracks->count() }}</td>
+                                        <td class="text-center">{{ $playlist->created_at }}</td>
+                                        <td class="text-right">
                                             <a class="btn btn-sm btn-default" href="{{ route('admin.playlists.edit', $playlist->id) }}">Edit</a>
                                             <form style="display: inline-block;" method="POST" action="{{ route('admin.playlists.destroy', $playlist->id) }}">
                                                 {{ csrf_field() }}
