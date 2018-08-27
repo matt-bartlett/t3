@@ -15,7 +15,7 @@ class StatsController extends Controller
 
     /**
      * Initialise the controller
-     * 
+     *
      * @param App\T3\Query\StatsQuery $query
      */
     public function __construct(StatsQuery $query)
@@ -25,7 +25,7 @@ class StatsController extends Controller
 
     /**
      * Get the contribution statistics for T3
-     * 
+     *
      * @return Illuminate\Http\Response
      */
     public function index()

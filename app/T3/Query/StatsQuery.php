@@ -32,9 +32,9 @@ class StatsQuery
 
     /**
      * Collect contribution statistics which include the total
-     * amount of Playlists & Tracks added, as well as the 
+     * amount of Playlists & Tracks added, as well as the
      * collective Track duration
-     * 
+     *
      * @return stdClass
      */
     public function getContributionStats()

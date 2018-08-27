@@ -54,9 +54,7 @@ class Request
 
         $payload = array_merge($parameters, $headers, $config);
 
-        $response = $this->guzzleClient->request(
-            $method, $url, $payload
-        );
+        $response = $this->guzzleClient->request($method, $url, $payload);
 
         $parsedResponse = $this->response->parse($response);
 
