@@ -57,7 +57,11 @@ class API
     {
         $headers = $this->getAuthorizationHeader();
 
-        $url = self::API_BASE_URL . '/users/' . $userId . '/playlists/' . $playlistId;
+        $url = vsprintf('%s/users/%s/playlists/%s', [
+            self::API_BASE_URL,
+            $userId,
+            $playlistId
+        ]);
 
         $response = $this->request->send($url, 'GET', [], $headers);
 

@@ -25,10 +25,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        // Bind TrackDurationFormatter to Container
         $this->app->bind('TrackDurationFormatter', function ($app) {
             return new TrackDurationFormatter;
         });
 
+        // Bind PlaylistDurationFormatter to Container
         $this->app->bind('PlaylistDurationFormatter', function ($app) {
             return new PlaylistDurationFormatter;
         });

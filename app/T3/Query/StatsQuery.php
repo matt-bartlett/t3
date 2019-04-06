@@ -5,6 +5,7 @@ namespace App\T3\Query;
 use stdClass;
 use App\Models\Track;
 use App\Models\Playlist;
+use App\T3\Utils\Format\TrackDurationFormatter;
 
 class StatsQuery
 {
@@ -19,15 +20,25 @@ class StatsQuery
     private $playlist;
 
     /**
+     * @var App\T3\Utils\Format\TrackDurationFormatter
+     */
+    private $formatter;
+
+    /**
      * Create a new class instance.
      *
      * @param App\Models\Track $track
      * @param App\Models\Playlist $playlist
+     * @param App\T3\Utils\Format\TrackDurationFormatter $formatter
      */
-    public function __construct(Track $track, Playlist $playlist)
-    {
+    public function __construct(
+        Track $track,
+        Playlist $playlist,
+        TrackDurationFormatter $formatter
+    ) {
         $this->track = $track;
         $this->playlist = $playlist;
+        $this->formatter = $formatter;
     }
 
     /**
@@ -48,7 +59,7 @@ class StatsQuery
         $contributionStats->PlaylistCount = $totalPlaylists;
         $contributionStats->AllTrackDuration = $trackDuration;
 
-        $contributionStats->AllTrackDuration = app('TrackDurationFormatter')
+        $contributionStats->AllTrackDuration = $this->formatter
             ->formatToMinutes($contributionStats->AllTrackDuration);
 
         return $contributionStats;

@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\Track;
 use App\Models\Account;
 use Illuminate\Database\Eloquent\Model;
+use App\T3\Utils\Format\PlaylistDurationFormatter;
 
 class Playlist extends Model
 {
