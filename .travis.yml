@@ -1,3 +1,5 @@
+dist: xenial
+
 language: php
 
 php:
@@ -9,12 +11,10 @@ services:
 addons:
   apt:
     sources:
-      - mysql-5.7-trusty
+      - mysql-5.7
     packages:
       - mysql-server
       - mysql-client
-
-dist: trusty
 
 sudo: required
 
