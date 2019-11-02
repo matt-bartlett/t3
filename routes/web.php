@@ -1,16 +1,5 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/', function () {
     return view('pages/index');
 });
@@ -28,6 +17,7 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 // Admin - Playlist Routes
 Route::get('/admin', 'Admin\PlaylistController@index')->name('admin.playlists.index');
+Route::get('/admin/test', 'Admin\PlaylistController@test');
 Route::get('/admin/playlists', 'Admin\PlaylistController@create')->name('admin.playlists.create');
 Route::post('/admin/playlists', 'Admin\PlaylistController@store')->name('admin.playlists.store');
 Route::get('/admin/playlists/{id}/edit', 'Admin\PlaylistController@edit')->name('admin.playlists.edit');
