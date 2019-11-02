@@ -23,14 +23,7 @@
         </whitelist>
     </filter>
     <logging>
-        <log type="coverage-html"
-             target="./tests/coverage"
-             charset="UTF-8"
-             yui="true"
-             highlight="true"
-             lowUpperBound="50"
-             highLowerBound="80"
-        />
+        <log type="coverage-html" target="./tests/coverage"/>
     </logging>
     <php>
         <env name="APP_ENV" value="testing"/>
