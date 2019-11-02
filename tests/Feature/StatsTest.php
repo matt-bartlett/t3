@@ -22,7 +22,7 @@ class StatsTest extends TestCase
     /**
      * @return void
      */
-    public function setUp()
+    public function setUp() : void
     {
         $this->query = app(StatsQuery::class);
 

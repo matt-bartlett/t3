@@ -20,7 +20,7 @@ class ResponseTest extends TestCase
     /**
      * @return void
      */
-    public function setUp()
+    public function setUp() : void
     {
         // Instantiate Response class
         $this->response = new Response;

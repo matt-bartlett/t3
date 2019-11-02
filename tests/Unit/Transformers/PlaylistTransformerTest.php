@@ -14,7 +14,7 @@ class PlaylistTransformerTest extends TestCase
 
     public $playlist;
 
-    public function setUp()
+    public function setUp() : void
     {
         parent::setUp();
         $this->playlist = new Playlist;

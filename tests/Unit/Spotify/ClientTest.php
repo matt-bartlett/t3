@@ -16,7 +16,7 @@ class ClientTest extends TestCase
     /**
      * @return void
      */
-    public function setUp()
+    public function setUp() : void
     {
         // API Mock
         $this->apiMock = $this->createMock(API::class);

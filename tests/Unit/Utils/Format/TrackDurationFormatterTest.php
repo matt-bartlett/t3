@@ -10,7 +10,7 @@ class TrackDurationFormatterTest extends TestCase
 {
     public $formatter;
 
-    public function setUp()
+    public function setUp() : void
     {
         parent::setUp();
         $this->formatter = new TrackDurationFormatter;

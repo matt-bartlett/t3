@@ -23,7 +23,7 @@ class AuthenticationTest extends TestCase
     /**
      * @return void
      */
-    public function setUp()
+    public function setUp() : void
     {
         // Response Mock
         $this->responseMock = $this->createMock(Response::class);

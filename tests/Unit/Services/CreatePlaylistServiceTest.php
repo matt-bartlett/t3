@@ -19,7 +19,7 @@ class CreatePlaylistServiceTest extends TestCase
     /**
      * @return void
      */
-    public function setUp()
+    public function setUp() : void
     {
         // Track Mock
         $trackMock = $this->createMock(Track::class);

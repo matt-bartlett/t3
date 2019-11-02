@@ -19,7 +19,7 @@ class RequestTest extends TestCase
     /**
      * @return void
      */
-    public function setUp()
+    public function setUp() : void
     {
         // Response Mock
         $this->responseMock = $this->getMockBuilder(Response::class)

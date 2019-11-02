@@ -12,7 +12,7 @@ class PlaylistTransformerTest extends TestCase
     /**
      * @return void
      */
-    public function setUp()
+    public function setUp() : void
     {
         // Instantiate Transformer class
         $this->transformer = new PlaylistTransformer;

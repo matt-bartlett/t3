@@ -16,7 +16,7 @@ class TransformerTest extends TestCase
     /**
      * @return void
      */
-    public function setUp()
+    public function setUp() : void
     {
         // Reflection class for testing protected methods
         $transformer = new ReflectionClass(Transformer::class);
