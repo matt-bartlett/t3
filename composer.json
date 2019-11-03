@@ -11,7 +11,7 @@
         "laravel/framework": "5.8.*",
         "laravel/tinker": "~1.0",
         "league/flysystem-aws-s3-v3": "^1.0",
-        "matt-bartlett/spotify-api": "dev-master",
+        "matt-bartlett/php-spotify-api": "^1.0",
         "spatie/laravel-backup": "^5.2",
         "spatie/laravel-fractal": "^5.2"
     },
