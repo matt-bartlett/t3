@@ -11,14 +11,15 @@ class StatsTransformer extends TransformerAbstract
      * Transform model output
      *
      * @param stdClass $stats
+     *
      * @return array
      */
-    public function transform(stdClass $stats)
+    public function transform(stdClass $stats) : array
     {
         return [
-            'total_track_count' => (integer) $stats->TrackCount,
-            'total_playlist_count' => (integer) $stats->PlaylistCount,
-            'total_track_duration' => (integer) $stats->AllTrackDuration
+            'total_track_count' => (int) $stats->TrackCount,
+            'total_playlist_count' => (int) $stats->PlaylistCount,
+            'total_track_duration' => (int) $stats->AllTrackDuration
         ];
     }
 }

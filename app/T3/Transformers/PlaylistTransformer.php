@@ -22,15 +22,16 @@ class PlaylistTransformer extends TransformerAbstract
      * Transform model output
      *
      * @param App\Models\Playlist $playlist
+     *
      * @return array
      */
-    public function transform(Playlist $playlist)
+    public function transform(Playlist $playlist) : array
     {
         return [
-            'id' => (integer) $playlist->id,
+            'id' => (int) $playlist->id,
             'name' => (string) $playlist->name,
             'owner' => (string) $playlist->owner_id,
-            'duration' => (integer) $playlist->duration,
+            'duration' => (int) $playlist->duration,
             'owner_name' => (string) $playlist->owner_name,
             'playlist_url' => (string) $playlist->playlist_url,
             'owner_profile_url' => (string) $playlist->owner_profile_url,
@@ -42,6 +43,7 @@ class PlaylistTransformer extends TransformerAbstract
      * Transform model output
      *
      * @param App\Models\Playlist $playlist
+     *
      * @return League\Fractal\Resource\Collection
      */
     public function includeTracks(Playlist $playlist)

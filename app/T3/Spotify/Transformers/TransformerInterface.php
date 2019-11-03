@@ -12,5 +12,5 @@ interface TransformerInterface
      * @param stdClass $object
      * @return array
      */
-    public function transform(stdClass $object);
+    public function transform(stdClass $object) : array;
 }

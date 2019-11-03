@@ -7,10 +7,11 @@ class TrackDurationFormatter
     /**
      * Format seconds into a human readable minute:second
      *
-     * @param integer $duration
+     * @param int $duration
+     *
      * @return string
      */
-    public function format($duration) : string
+    public function format(int $duration) : string
     {
         $seconds = floor($duration / 1000) % 60;
 
@@ -26,10 +27,11 @@ class TrackDurationFormatter
     /**
      * Format seconds into minutes
      *
-     * @param integer $duration
-     * @return integer
+     * @param int $duration
+     *
+     * @return int
      */
-    public function formatToMinutes($duration) : int
+    public function formatToMinutes(int $duration) : int
     {
         return floor(($duration / 1000) / 60);
     }

@@ -22,15 +22,16 @@ class TrackTransformer extends TransformerAbstract
      * Transform model output
      *
      * @param App\Models\Track $track
+     *
      * @return array
      */
-    public function transform(Track $track)
+    public function transform(Track $track) : array
     {
         return [
             'title' => (string) $track->title,
             'album' => (string) $track->album,
             'artist' => (string) $track->artist,
-            'duration' => (integer) $track->duration,
+            'duration' => (int) $track->duration,
             'spotify_url' => (string) $track->spotify_url,
             'spotify_track_id' => (string) $track->spotify_track_id,
             'duration_formatted' => (string) $track->duration_formatted,
@@ -43,6 +44,7 @@ class TrackTransformer extends TransformerAbstract
      * Transform model output
      *
      * @param App\Models\Track $track
+     *
      * @return League\Fractal\Resource\Item
      */
     public function includePlaylists(Track $track)

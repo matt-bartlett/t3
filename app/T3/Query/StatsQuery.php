@@ -48,7 +48,7 @@ class StatsQuery
      *
      * @return stdClass
      */
-    public function getContributionStats()
+    public function getContributionStats() : stdClass
     {
         $totalTracks = $this->track->select(['id'])->count();
         $trackDuration = $this->track->select(['duration'])->sum('duration');

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Playlist;
+use Illuminate\Http\JsonResponse;
 use App\T3\Transformers\PlaylistTransformer;
 
 class PlaylistController extends Controller
@@ -25,9 +26,9 @@ class PlaylistController extends Controller
     /**
      * Return paginated list of Playlists
      *
-     * @return Illuminate\Http\Response
+     * @return Illuminate\Http\JsonResponse
      */
-    public function index()
+    public function index() : JsonResponse
     {
         $playlists = $this->playlist->latest()->paginate(24);
 
@@ -40,9 +41,10 @@ class PlaylistController extends Controller
      * Return paginated list of Tracks for a specified Playlist
      *
      * @param integer $id
-     * @return Illuminate\Http\Response
+     *
+     * @return Illuminate\Http\JsonResponse
      */
-    public function show($id)
+    public function show($id) : JsonResponse
     {
         $playlist = $this->playlist->findOrFail($id);
 

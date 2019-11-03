@@ -15,7 +15,7 @@ class PlaylistTransformer extends Transformer implements TransformerInterface
      *
      * @return array
      */
-    public function transform(stdClass $object)
+    public function transform(stdClass $object) : array
     {
         $playlist = [];
         $playlist['name'] = $this->get($object, 'name');

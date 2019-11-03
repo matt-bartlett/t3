@@ -67,6 +67,7 @@ class PlaylistController extends Controller
      *
      * @param App\Http\Requests\SpotifyPlaylistRequest $request
      * @param App\T3\Services\CreatePlaylistService $service
+     *
      * @return Illuminate\Http\RedirectResponse
      */
     public function store(SpotifyPlaylistRequest $request, CreatePlaylistService $service)
