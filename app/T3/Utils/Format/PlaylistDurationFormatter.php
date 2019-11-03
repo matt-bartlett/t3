@@ -2,8 +2,6 @@
 
 namespace App\T3\Utils\Format;
 
-use Illuminate\Database\Eloquent\Collection;
-
 class PlaylistDurationFormatter
 {
     /**

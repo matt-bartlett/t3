@@ -46,6 +46,7 @@ class Track extends Model
      *
      * @param Illuminate\Database\Eloquent\Builder $query
      * @param string $searchTerm
+     *
      * @return Illuminate\Database\Eloquent\Builder
      */
     public function scopeSearch($query, $searchTerm)

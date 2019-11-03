@@ -41,7 +41,7 @@ class TrackTransformer extends TransformerAbstract
     }
 
     /**
-     * Transform model output
+     * Include Playlist in transformation
      *
      * @param App\Models\Track $track
      *
