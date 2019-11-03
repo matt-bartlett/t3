@@ -17,7 +17,6 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 // Admin - Playlist Routes
 Route::get('/admin', 'Admin\PlaylistController@index')->name('admin.playlists.index');
-Route::get('/admin/test', 'Admin\PlaylistController@test');
 Route::get('/admin/playlists', 'Admin\PlaylistController@create')->name('admin.playlists.create');
 Route::post('/admin/playlists', 'Admin\PlaylistController@store')->name('admin.playlists.store');
 Route::get('/admin/playlists/{id}/edit', 'Admin\PlaylistController@edit')->name('admin.playlists.edit');
