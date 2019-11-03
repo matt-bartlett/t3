@@ -23,7 +23,7 @@ class PlaylistTransformerTest extends TestCase
     /**
      * @return void
      */
-    public function test_transforming_playlist_object_is_successful()
+    public function test_transforming_playlist_object_is_successful() : void
     {
         $playlist = $this->getFixture('playlist.txt');
 

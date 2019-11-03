@@ -10,6 +10,8 @@ use App\Http\Requests\PlaylistRequest;
 use App\T3\Services\CreatePlaylistService;
 use App\Http\Requests\SpotifyPlaylistRequest;
 
+use Spotify\Resources\Playlist as SpotfiyPlaylist;
+
 class PlaylistController extends Controller
 {
     /**
@@ -71,7 +73,7 @@ class PlaylistController extends Controller
     {
         try {
             // Create Playlist based on input data
-            $service->make($request);
+            $service->handle($request);
 
             return redirect()->route('admin.playlists.index');
         } catch (Exception $e) {

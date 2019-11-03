@@ -19,7 +19,7 @@ class TrackDurationFormatterTest extends TestCase
     /**
      * @return void
      */
-    public function test_duration_formats()
+    public function test_duration_formats() : void
     {
         $this->assertEquals('0:53', $this->formatter->format(53000));
         $this->assertEquals('0:53', $this->formatter->format(53500));
@@ -30,7 +30,7 @@ class TrackDurationFormatterTest extends TestCase
     /**
      * @return void
      */
-    public function test_equally_divisible_duration_formats_an_exact_minute()
+    public function test_equally_divisible_duration_formats_an_exact_minute() : void
     {
         $this->assertEquals('3:00', $this->formatter->format(180000));
     }
@@ -38,7 +38,7 @@ class TrackDurationFormatterTest extends TestCase
     /**
      * @return void
      */
-    public function test_duration_formats_to_minutes()
+    public function test_duration_formats_to_minutes() : void
     {
         $this->assertEquals(3, $this->formatter->formatToMinutes(180000));
         $this->assertEquals(3, $this->formatter->formatToMinutes(230000));

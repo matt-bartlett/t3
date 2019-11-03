@@ -16,7 +16,7 @@ class TrackTransformerTest extends TestCase
     /**
      * @return void
      */
-    public function test_track_model_transforms()
+    public function test_track_model_transforms() : void
     {
         $expected = array(
             'data' => array(
@@ -51,7 +51,7 @@ class TrackTransformerTest extends TestCase
     /**
      * @return void
      */
-    public function test_track_transform_includes_playlist_collection()
+    public function test_track_transform_includes_playlist_collection() : void
     {
         $expected = array(
             'data' => array(

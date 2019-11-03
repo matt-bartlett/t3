@@ -11,5 +11,5 @@ interface Service
      *
      * @param Illuminate\Http\Request $request
      */
-    public function make(Request $request);
+    public function handle(Request $request);
 }

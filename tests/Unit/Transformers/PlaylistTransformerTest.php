@@ -23,7 +23,7 @@ class PlaylistTransformerTest extends TestCase
     /**
      * @return void
      */
-    public function test_playlist_model_transforms()
+    public function test_playlist_model_transforms() : void
     {
         $expected = array(
             'data' => array(
@@ -54,7 +54,7 @@ class PlaylistTransformerTest extends TestCase
     /**
      * @return void
      */
-    public function test_playlist_collection_with_pagination_has_meta_and_data_keys()
+    public function test_playlist_collection_with_pagination_has_meta_and_data_keys() : void
     {
         $playlists = factory(Playlist::class, 10)->create();
 

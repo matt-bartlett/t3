@@ -19,7 +19,7 @@ class PlaylistDurationFormatterTest extends TestCase
     /**
      * @return void
      */
-    public function test_total_track_ms_durations_formats_to_minutes()
+    public function test_total_track_ms_durations_formats_to_minutes() : void
     {
         $a = new Track;
         $a->duration = 120000; // 2 Minutes
@@ -41,7 +41,7 @@ class PlaylistDurationFormatterTest extends TestCase
     /**
      * @return void
      */
-    public function test_total_duration_is_rounded_down_to_nearest_integer()
+    public function test_total_duration_is_rounded_down_to_nearest_integer() : void
     {
         $a = new Track;
         $a->duration = 179000; // 2:59 Minutes

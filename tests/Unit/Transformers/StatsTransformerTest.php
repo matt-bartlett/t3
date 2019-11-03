@@ -15,7 +15,7 @@ class StatsTransformerTest extends TestCase
     /**
      * @return void
      */
-    public function test_stats_query_transforms()
+    public function test_stats_query_transforms() : void
     {
         $expected = array(
             'data' => array(

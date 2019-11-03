@@ -13,7 +13,9 @@ class Transformer
      *
      * @param stdClass|array $object
      * @param string $property
+     *
      * @return string
+     *
      * @throws Exception
      */
     protected function get($object, $property)
@@ -30,6 +32,6 @@ class Transformer
             return null;
         }
 
-        throw new Exception("Failed to find that property from the object");
+        throw new Exception('Failed to find that property from the object');
     }
 }
