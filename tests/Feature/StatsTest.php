@@ -32,7 +32,7 @@ class StatsTest extends TestCase
     /**
      * @return void
      */
-    public function test_stats_generation()
+    public function test_stats_generation() : void
     {
         $tracks = factory(Track::class, 30)->create([
             'duration' => 20000

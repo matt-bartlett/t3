@@ -17,7 +17,7 @@ class PlaylistTest extends TestCase
     /**
      * @return void
      */
-    public function test_visitor_can_view_playlists()
+    public function test_visitor_can_view_playlists() : void
     {
         factory(Playlist::class)->create([
             'name' => 'T3 Playlist #1'
@@ -31,7 +31,7 @@ class PlaylistTest extends TestCase
     /**
      * @return void
      */
-    public function test_visitor_can_view_specific_playlist()
+    public function test_visitor_can_view_specific_playlist() : void
     {
         $playlist = factory(Playlist::class)->create([
             'name' => 'T3 Playlist #1'
@@ -53,7 +53,7 @@ class PlaylistTest extends TestCase
     /**
      * @return void
      */
-    public function test_user_account_name_appears_on_playlist()
+    public function test_user_account_name_appears_on_playlist() : void
     {
         $playlist = factory(Playlist::class)->create([
             'name' => 'T3 Playlist #1',
@@ -78,7 +78,7 @@ class PlaylistTest extends TestCase
     /**
      * @return void
      */
-    public function test_fetching_nonexistent_playlist_throws_404()
+    public function test_fetching_nonexistent_playlist_throws_404() : void
     {
         $this->json('GET', 'api/playlists/999')
             ->assertStatus(404)
@@ -88,7 +88,7 @@ class PlaylistTest extends TestCase
     /**
      * @return void
      */
-    public function test_forbidden_http_method_when_fetching_playlist_throws_405()
+    public function test_forbidden_http_method_when_fetching_playlist_throws_405() : void
     {
         $playlist = factory(Playlist::class)->create([
             'name' => 'T3 Playlist #1'

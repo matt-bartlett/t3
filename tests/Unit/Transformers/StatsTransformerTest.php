@@ -17,13 +17,13 @@ class StatsTransformerTest extends TestCase
      */
     public function test_stats_query_transforms() : void
     {
-        $expected = array(
-            'data' => array(
+        $expected = [
+            'data' => [
                 'total_track_count' => 30,
                 'total_playlist_count' => 5,
                 'total_track_duration' => 3000
-            )
-        );
+            ]
+        ];
 
         $stats = new stdClass;
         $stats->TrackCount = 30;

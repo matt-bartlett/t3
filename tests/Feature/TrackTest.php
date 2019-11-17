@@ -16,7 +16,7 @@ class TrackTest extends TestCase
     /**
      * @return void
      */
-    public function test_searching_without_criteria_throws_bad_request_exception()
+    public function test_searching_without_criteria_throws_bad_request_exception() : void
     {
         $this->json('GET', 'api/search/')
             ->assertStatus(400)
@@ -26,7 +26,7 @@ class TrackTest extends TestCase
     /**
      * @return void
      */
-    public function test_searching_fails_to_find_tracks_based_on_invalid_criteria()
+    public function test_searching_fails_to_find_tracks_based_on_invalid_criteria() : void
     {
         $playlist = factory(Playlist::class)->create([
             'name' => 'T3 Playlist #1'
@@ -51,7 +51,7 @@ class TrackTest extends TestCase
     /**
      * @return void
      */
-    public function test_searching_finds_track_based_on_valid_criteria()
+    public function test_searching_finds_track_based_on_valid_criteria() : void
     {
         $playlist = factory(Playlist::class)->create([
             'name' => 'T3 Playlist #1'
@@ -77,7 +77,7 @@ class TrackTest extends TestCase
     /**
      * @return void
      */
-    public function test_searching_tracks_returns_associated_playlist()
+    public function test_searching_tracks_returns_associated_playlist() : void
     {
         $playlist = factory(Playlist::class)->create([
             'name' => 'T3 Playlist #1'
@@ -102,7 +102,7 @@ class TrackTest extends TestCase
     /**
      * @return void
      */
-    public function test_searching_tracks_returns_multiple_associated_playlists()
+    public function test_searching_tracks_returns_multiple_associated_playlists() : void
     {
         $playlists = factory(Playlist::class, 2)->create();
 
