@@ -5,7 +5,7 @@ namespace App\T3\Query;
 use stdClass;
 use App\Models\Track;
 use App\Models\Playlist;
-use App\T3\Utils\Format\TrackDurationFormatter;
+use App\T3\Formatters\TrackDurationFormatter;
 
 class StatsQuery
 {
@@ -20,7 +20,7 @@ class StatsQuery
     private $playlist;
 
     /**
-     * @var App\T3\Utils\Format\TrackDurationFormatter
+     * @var App\T3\Formatters\TrackDurationFormatter
      */
     private $formatter;
 
@@ -29,7 +29,7 @@ class StatsQuery
      *
      * @param App\Models\Track $track
      * @param App\Models\Playlist $playlist
-     * @param App\T3\Utils\Format\TrackDurationFormatter $formatter
+     * @param App\T3\Formatters\TrackDurationFormatter $formatter
      */
     public function __construct(
         Track $track,

@@ -10,8 +10,6 @@ use Illuminate\Support\ServiceProvider;
 use Spotify\Auth\Flows\ClientCredentials;
 use Spotify\Contracts\Auth\Authenticator;
 use Spotify\Sessions\LaravelSessionHandler;
-use App\T3\Utils\Format\TrackDurationFormatter;
-use App\T3\Utils\Format\PlaylistDurationFormatter;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -32,16 +30,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        // Bind TrackDurationFormatter to Container
-        $this->app->bind('TrackDurationFormatter', function ($app) {
-            return new TrackDurationFormatter;
-        });
-
-        // Bind PlaylistDurationFormatter to Container
-        $this->app->bind('PlaylistDurationFormatter', function ($app) {
-            return new PlaylistDurationFormatter;
-        });
-
         // Bind Spotify credentials.
         $this->app->singleton(Credentials::class, function ($app) {
             return new Credentials(

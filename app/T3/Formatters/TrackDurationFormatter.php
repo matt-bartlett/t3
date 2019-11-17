@@ -1,6 +1,6 @@
 <?php
 
-namespace App\T3\Utils\Format;
+namespace App\T3\Formatters;
 
 class TrackDurationFormatter
 {

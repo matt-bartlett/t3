@@ -39,16 +39,6 @@ class Playlist extends Model
     }
 
     /**
-     * Define an attribute on a Playlist to return the total playlist duration
-     *
-     * @return integer
-     */
-    public function getDurationAttribute()
-    {
-        return app('PlaylistDurationFormatter')->format($this->tracks);
-    }
-
-    /**
      * Return the Account display name if a relationship exists, else
      * return the Owner ID from Spotify
      *

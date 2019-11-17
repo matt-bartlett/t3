@@ -1,10 +1,10 @@
 <?php
 
-namespace Tests\Unit\Utils\Format;
+namespace Tests\Unit\Formatters;
 
 use Tests\TestCase;
 use App\Models\Track;
-use App\T3\Utils\Format\PlaylistDurationFormatter;
+use App\T3\Formatters\PlaylistDurationFormatter;
 
 class PlaylistDurationFormatterTest extends TestCase
 {
