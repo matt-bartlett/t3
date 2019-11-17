@@ -32,20 +32,11 @@ class Track extends Model
     }
 
     /**
-     * Define an attribute on a Track to return its duration
-     *
-     * @return string
-     */
-    public function getDurationFormattedAttribute()
-    {
-        return app('TrackDurationFormatter')->format($this->duration);
-    }
-
-    /**
      * Scope a query to search for tracks matching the search term
      *
      * @param Illuminate\Database\Eloquent\Builder $query
      * @param string $searchTerm
+     *
      * @return Illuminate\Database\Eloquent\Builder
      */
     public function scopeSearch($query, $searchTerm)

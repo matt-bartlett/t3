@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Track;
 use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
 use App\T3\Transformers\TrackTransformer;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
@@ -28,10 +29,12 @@ class TrackController extends Controller
      * Search for track titles, artists or albums matching the search term
      *
      * @param Illuminate\Http\Request $request
-     * @return Illuminate\Http\Response
+     *
+     * @return Illuminate\Http\JsonResponse
+     *
      * @throws BadRequestHttpException
      */
-    public function search(Request $request)
+    public function search(Request $request) : JsonResponse
     {
         $query = $request->get('q');
 

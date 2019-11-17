@@ -6,11 +6,10 @@ use DB;
 use Tests\TestCase;
 use App\Models\Track;
 use App\Models\Playlist;
-use App\T3\Spotify\API;
-use App\T3\Spotify\Client;
-use App\T3\Spotify\Auth\Authenticator;
 use App\T3\Services\CreatePlaylistService;
 use App\Http\Requests\SpotifyPlaylistRequest;
+use Spotify\Resources\Playlist as SpotfiyPlaylist;
+use App\T3\Spotify\Transformers\PlaylistTransformer;
 
 class CreatePlaylistServiceTest extends TestCase
 {
@@ -19,36 +18,34 @@ class CreatePlaylistServiceTest extends TestCase
     /**
      * @return void
      */
-    public function setUp()
+    public function setUp() : void
     {
-        // Track Mock
+        // Track Mock.
         $trackMock = $this->createMock(Track::class);
 
-        // Playlist Mock
+        // Playlist Mock.
         $playlistMock = $this->createMock(Playlist::class);
 
-        // Client Mock
-        $clientMock = $this->getMockBuilder(Client::class)
+        // Spotify API Mock.
+        $apiMock = $this->getMockBuilder(SpotfiyPlaylist::class)
             ->disableOriginalConstructor()
-            ->setMethods(array('getApi'))
+            ->setMethods(['getPlaylist'])
             ->getMock();
 
-        // API Mock
-        $apiMock = $this->getMockBuilder(API::class)
-            ->disableOriginalConstructor()
-            ->setMethods(array('getPlaylist'))
-            ->getMock();
-
-        // API Mock returns the Playlist fixture
+        // Spotify API Mock returns the Playlist fixture.
         $apiMock->expects($this->once())
             ->method('getPlaylist')
             ->willReturn($this->getFixture('playlist.txt'));
 
-        $clientMock->expects($this->once())
-            ->method('getApi')
-            ->willReturn($apiMock);
+        // No need to mock the transformer.
+        $transformer = new PlaylistTransformer;
 
-        $this->service = new CreatePlaylistService($trackMock, $playlistMock, $clientMock);
+        $this->service = new CreatePlaylistService(
+            $trackMock,
+            $playlistMock,
+            $apiMock,
+            $transformer
+        );
 
         parent::setUp();
     }
@@ -56,7 +53,7 @@ class CreatePlaylistServiceTest extends TestCase
     /**
      * @return void
      */
-    public function test_service_returns_playlist()
+    public function test_service_returns_playlist() : void
     {
         // DB Mock - Stubbing out, not required as part of the unit test
         DB::shouldReceive('transaction')
@@ -66,15 +63,15 @@ class CreatePlaylistServiceTest extends TestCase
         // Request Mock
         $spotifyPlaylistRequestMock = $this->getMockBuilder(SpotifyPlaylistRequest::class)
             ->disableOriginalConstructor()
-            ->setMethods(array('get'))
+            ->setMethods(['get'])
             ->getMock();
 
         // Setting the values of the 'get' method calls on the Request object
-        $spotifyPlaylistRequestMock->expects($this->exactly(3))
+        $spotifyPlaylistRequestMock->expects($this->exactly(2))
             ->method('get')
-            ->will($this->onConsecutiveCalls('matt.bartlett', '123456', false));
+            ->will($this->onConsecutiveCalls('matt.bartlett', false));
 
-        $playlist = $this->service->make($spotifyPlaylistRequestMock);
+        $playlist = $this->service->handle($spotifyPlaylistRequestMock);
 
         $this->assertInternalType('array', $playlist);
         $this->assertEquals('Uplifting Trance', $playlist['name']);
@@ -83,7 +80,7 @@ class CreatePlaylistServiceTest extends TestCase
     /**
      * @return void
      */
-    public function test_service_overwrites_playlist_name_if_request_parameter_present()
+    public function test_service_overwrites_playlist_name_if_request_parameter_present() : void
     {
         // DB Mock - Stubbing out, not required as part of the unit test
         DB::shouldReceive('transaction')
@@ -93,17 +90,17 @@ class CreatePlaylistServiceTest extends TestCase
         // Request Mock
         $spotifyPlaylistRequestMock = $this->getMockBuilder(SpotifyPlaylistRequest::class)
             ->disableOriginalConstructor()
-            ->setMethods(array('get'))
+            ->setMethods(['get'])
             ->getMock();
 
         // Setting the values of the 'get' method calls on the Request object
-        $spotifyPlaylistRequestMock->expects($this->exactly(4))
+        $spotifyPlaylistRequestMock->expects($this->exactly(3))
             ->method('get')
             ->will($this->onConsecutiveCalls(
-                'matt.bartlett', '123456', 'Brand New Playlist Name', 'Brand New Playlist Name'
+                'matt.bartlett', 'Brand New Playlist Name', 'Brand New Playlist Name'
             ));
 
-        $playlist = $this->service->make($spotifyPlaylistRequestMock);
+        $playlist = $this->service->handle($spotifyPlaylistRequestMock);
 
         $this->assertEquals('Brand New Playlist Name', $playlist['name']);
     }

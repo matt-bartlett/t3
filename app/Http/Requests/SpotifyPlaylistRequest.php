@@ -25,7 +25,6 @@ class SpotifyPlaylistRequest extends FormRequest
     {
         return [
             'name' => 'nullable|string',
-            'spotify_account_id' => 'required|string',
             'spotify_playlist_id' => 'required|alpha_num'
         ];
     }
@@ -38,7 +37,6 @@ class SpotifyPlaylistRequest extends FormRequest
     public function messages()
     {
         return [
-            'spotify_account_id.required' => 'Give the Account ID.',
             'spotify_playlist_id.required' => 'Give the Playlist ID.'
         ];
     }

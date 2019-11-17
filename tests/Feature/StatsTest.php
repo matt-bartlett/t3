@@ -22,7 +22,7 @@ class StatsTest extends TestCase
     /**
      * @return void
      */
-    public function setUp()
+    public function setUp() : void
     {
         $this->query = app(StatsQuery::class);
 
@@ -32,7 +32,7 @@ class StatsTest extends TestCase
     /**
      * @return void
      */
-    public function test_stats_generation()
+    public function test_stats_generation() : void
     {
         $tracks = factory(Track::class, 30)->create([
             'duration' => 20000

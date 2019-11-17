@@ -13,10 +13,12 @@ class Transformer
      *
      * @param stdClass|array $object
      * @param string $property
-     * @return string
+     *
+     * @return mixed
+     *
      * @throws Exception
      */
-    protected function get($object, $property)
+    protected function get($object, string $property)
     {
         if (is_array($object)) {
             $object = $object[0];
@@ -30,6 +32,6 @@ class Transformer
             return null;
         }
 
-        throw new Exception("Failed to find that property from the object");
+        throw new Exception('Failed to find that property from the object');
     }
 }

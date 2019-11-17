@@ -32,14 +32,4 @@ class Kernel extends ConsoleKernel
             ->fridays()
             ->at('21:10');
     }
-
-    /**
-     * Register the Closure based commands for the application.
-     *
-     * @return void
-     */
-    protected function commands()
-    {
-        require base_path('routes/console.php');
-    }
 }

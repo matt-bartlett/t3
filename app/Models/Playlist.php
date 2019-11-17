@@ -5,7 +5,6 @@ namespace App\Models;
 use App\Models\Track;
 use App\Models\Account;
 use Illuminate\Database\Eloquent\Model;
-use App\T3\Utils\Format\PlaylistDurationFormatter;
 
 class Playlist extends Model
 {
@@ -36,16 +35,6 @@ class Playlist extends Model
     public function account()
     {
         return $this->hasOne(Account::class, 'spotify_account_id', 'owner_id');
-    }
-
-    /**
-     * Define an attribute on a Playlist to return the total playlist duration
-     *
-     * @return integer
-     */
-    public function getDurationAttribute()
-    {
-        return app('PlaylistDurationFormatter')->format($this->tracks);
     }
 
     /**

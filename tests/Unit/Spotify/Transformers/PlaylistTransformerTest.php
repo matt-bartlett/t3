@@ -12,7 +12,7 @@ class PlaylistTransformerTest extends TestCase
     /**
      * @return void
      */
-    public function setUp()
+    public function setUp() : void
     {
         // Instantiate Transformer class
         $this->transformer = new PlaylistTransformer;
@@ -23,7 +23,7 @@ class PlaylistTransformerTest extends TestCase
     /**
      * @return void
      */
-    public function test_transforming_playlist_object_is_successful()
+    public function test_transforming_playlist_object_is_successful() : void
     {
         $playlist = $this->getFixture('playlist.txt');
 

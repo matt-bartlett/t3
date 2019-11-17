@@ -16,10 +16,10 @@ class TrackTransformerTest extends TestCase
     /**
      * @return void
      */
-    public function test_track_model_transforms()
+    public function test_track_model_transforms() : void
     {
-        $expected = array(
-            'data' => array(
+        $expected = [
+            'data' => [
                 'title' => 'Sanctuary - Ben Gold Remix',
                 'album' => 'Sanctuary Remixes',
                 'artist' => 'Gareth Emery',
@@ -29,8 +29,8 @@ class TrackTransformerTest extends TestCase
                 'duration_formatted' => '6:48',
                 'spotify_preview_url' => 'https://p.scdn.co/mp3-preview/af5bc221004848f44f96eef3196cfe11755639df?cid=8897482848704f2a8f8d7c79726a70d4',
                 'spotify_thumbnail_url' => 'https://i.scdn.co/image/9d9995440c5446b4d4edc4a1fac1c913e8a2aded'
-            )
-        );
+            ]
+        ];
 
         $track = new Track;
         $track->id = 999999;
@@ -51,10 +51,10 @@ class TrackTransformerTest extends TestCase
     /**
      * @return void
      */
-    public function test_track_transform_includes_playlist_collection()
+    public function test_track_transform_includes_playlist_collection() : void
     {
-        $expected = array(
-            'data' => array(
+        $expected = [
+            'data' => [
                 'title' => 'Sanctuary - Ben Gold Remix',
                 'album' => 'Sanctuary Remixes',
                 'artist' => 'Gareth Emery',
@@ -64,9 +64,9 @@ class TrackTransformerTest extends TestCase
                 'duration_formatted' => '6:48',
                 'spotify_preview_url' => 'https://p.scdn.co/mp3-preview/af5bc221004848f44f96eef3196cfe11755639df?cid=8897482848704f2a8f8d7c79726a70d4',
                 'spotify_thumbnail_url' => 'https://i.scdn.co/image/9d9995440c5446b4d4edc4a1fac1c913e8a2aded',
-                'playlists' => array(
-                    'data' => array(
-                        array(
+                'playlists' => [
+                    'data' => [
+                        [
                             'id' => 999999,
                             'name' => 'T3 Playlist #1',
                             'duration' => 6,
@@ -75,11 +75,11 @@ class TrackTransformerTest extends TestCase
                             'owner_profile_url' => 'https://api.spotify/com/user/999999999',
                             'playlist_url' => 'https://api.spotify.com/playlist/123456789',
                             'playlist_thumbnail_url' => 'https://mosaic.scdn.co/640/123456789'
-                        )
-                    )
-                )
-            )
-        );
+                        ]
+                    ]
+                ]
+            ]
+        ];
 
         $playlist = new Playlist;
         $playlist->id = 999999;

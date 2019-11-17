@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\T3\Query\StatsQuery;
+use Illuminate\Http\JsonResponse;
 use App\T3\Transformers\StatsTransformer;
 
 class StatsController extends Controller
@@ -26,9 +27,9 @@ class StatsController extends Controller
     /**
      * Get the contribution statistics for T3
      *
-     * @return Illuminate\Http\Response
+     * @return Illuminate\Http\JsonResponse
      */
-    public function index()
+    public function index() : JsonResponse
     {
         $data = $this->query->getContributionStats();
 

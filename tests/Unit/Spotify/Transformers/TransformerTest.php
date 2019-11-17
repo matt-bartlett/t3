@@ -16,7 +16,7 @@ class TransformerTest extends TestCase
     /**
      * @return void
      */
-    public function setUp()
+    public function setUp() : void
     {
         // Reflection class for testing protected methods
         $transformer = new ReflectionClass(Transformer::class);
@@ -32,7 +32,7 @@ class TransformerTest extends TestCase
     /**
      * @return void
      */
-    public function test_getting_invalid_property_throws_exception()
+    public function test_getting_invalid_property_throws_exception() : void
     {
         $this->expectException(Exception::class);
 
@@ -44,7 +44,7 @@ class TransformerTest extends TestCase
     /**
      * @return void
      */
-    public function test_getting_a_property_from_an_object()
+    public function test_getting_a_property_from_an_object() : void
     {
         $object = $this->getUserObject();
 
@@ -56,7 +56,7 @@ class TransformerTest extends TestCase
     /**
      * @return void
      */
-    public function test_getting_a_property_from_an_array()
+    public function test_getting_a_property_from_an_array() : void
     {
         $object = [$this->getUserObject()];
 
@@ -70,7 +70,7 @@ class TransformerTest extends TestCase
      *
      * @return stdClass
      */
-    private function getUserObject()
+    private function getUserObject() : stdClass
     {
         $object = new stdClass;
         $object->firstname = 'Matt';

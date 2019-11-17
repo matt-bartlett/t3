@@ -1,16 +1,16 @@
 <?php
 
-namespace Tests\Unit\Utils\Format;
+namespace Tests\Unit\Formatters;
 
 use Tests\TestCase;
 use App\Models\Track;
-use App\T3\Utils\Format\PlaylistDurationFormatter;
+use App\T3\Formatters\PlaylistDurationFormatter;
 
 class PlaylistDurationFormatterTest extends TestCase
 {
     public $formatter;
 
-    public function setUp()
+    public function setUp() : void
     {
         parent::setUp();
         $this->formatter = new PlaylistDurationFormatter;
@@ -19,7 +19,7 @@ class PlaylistDurationFormatterTest extends TestCase
     /**
      * @return void
      */
-    public function test_total_track_ms_durations_formats_to_minutes()
+    public function test_total_track_ms_durations_formats_to_minutes() : void
     {
         $a = new Track;
         $a->duration = 120000; // 2 Minutes
@@ -41,7 +41,7 @@ class PlaylistDurationFormatterTest extends TestCase
     /**
      * @return void
      */
-    public function test_total_duration_is_rounded_down_to_nearest_integer()
+    public function test_total_duration_is_rounded_down_to_nearest_integer() : void
     {
         $a = new Track;
         $a->duration = 179000; // 2:59 Minutes

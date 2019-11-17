@@ -6,9 +6,9 @@ use DB;
 use Exception;
 use App\Models\Track;
 use App\Models\Playlist;
-use App\T3\Spotify\Client;
 use Illuminate\Http\Request;
 use App\Http\Requests\SpotifyPlaylistRequest;
+use Spotify\Resources\Playlist as SpotfiyPlaylist;
 use App\T3\Spotify\Transformers\PlaylistTransformer;
 
 class CreatePlaylistService implements Service
@@ -24,23 +24,35 @@ class CreatePlaylistService implements Service
     private $playlist;
 
     /**
-     * @var App\T3\Spotify\Client
+     * @var Spotify\Resources\Playlist
      */
-    private $spotify;
+    private $api;
+
+    /**
+     * @var App\T3\Spotify\Transformers\PlaylistTransformer
+     */
+    private $transformer;
 
     /**
      * Create a new class instance.
      *
      * @param App\Models\Track $track
      * @param App\Models\Playlist $playlist
-     * @param App\T3\Spotify\Client $spotify
+     * @param Spotify\Resources\Playlist $spotify
+     * @param App\T3\Spotify\Transformers\PlaylistTransformer $transformer
+     *
      * @return void
      */
-    public function __construct(Track $track, Playlist $playlist, Client $spotify)
-    {
+    public function __construct(
+        Track $track,
+        Playlist $playlist,
+        SpotfiyPlaylist $spotify,
+        PlaylistTransformer $transformer
+    ) {
         $this->track = $track;
         $this->playlist = $playlist;
         $this->spotify = $spotify;
+        $this->transformer = $transformer;
     }
 
     /**
@@ -48,18 +60,18 @@ class CreatePlaylistService implements Service
      * and store the Playlist & Tracks to the database.
      *
      * @param Illuminate\Http\Request $request
+     *
      * @return array
      */
-    public function make(Request $request)
+    public function handle(Request $request) : array
     {
         // Fetch the Playlist from Spotify
-        $playlist = $this->spotify->getApi()->getPlaylist(
-            $request->get('spotify_account_id'),
+        $playlist = $this->spotify->getPlaylist(
             $request->get('spotify_playlist_id')
         );
 
         // Transform the Playlist to an array
-        $playlist = $this->spotify->transform($playlist, new PlaylistTransformer);
+        $playlist = $this->transformer->transform($playlist);
 
         // Override the Playlist name if present
         if ($request->get('name')) {
@@ -67,9 +79,7 @@ class CreatePlaylistService implements Service
         }
 
         // Save the Playlist
-        $createdPlaylist = $this->createPlaylist($playlist);
-
-        return $createdPlaylist;
+        return $this->createPlaylist($playlist);
     }
 
     /**
@@ -77,10 +87,12 @@ class CreatePlaylistService implements Service
      * new or existing Tracks to the Playlist.
      *
      * @param array $playlist
+     *
      * @return array
+     *
      * @throws Exception
      */
-    private function createPlaylist(array $playlist)
+    private function createPlaylist(array $playlist) : array
     {
         DB::transaction(function () use ($playlist) {
             $created = $this->playlist->create($playlist);

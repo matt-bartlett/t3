@@ -14,7 +14,7 @@ class PlaylistTransformerTest extends TestCase
 
     public $playlist;
 
-    public function setUp()
+    public function setUp() : void
     {
         parent::setUp();
         $this->playlist = new Playlist;
@@ -23,10 +23,10 @@ class PlaylistTransformerTest extends TestCase
     /**
      * @return void
      */
-    public function test_playlist_model_transforms()
+    public function test_playlist_model_transforms() : void
     {
-        $expected = array(
-            'data' => array(
+        $expected = [
+            'data' => [
                 'id' => 999,
                 'name' => 'T3 Playlist #1',
                 'owner' => '999999999',
@@ -35,8 +35,8 @@ class PlaylistTransformerTest extends TestCase
                 'playlist_url' => 'https://api.spotify.com/playlist/123456789',
                 'owner_profile_url' => 'https://api.spotify/com/user/999999999',
                 'playlist_thumbnail_url' => 'https://mosaic.scdn.co/640/123456789'
-            )
-        );
+            ]
+        ];
 
         $playlist = new Playlist;
         $playlist->id = 999;
@@ -54,7 +54,7 @@ class PlaylistTransformerTest extends TestCase
     /**
      * @return void
      */
-    public function test_playlist_collection_with_pagination_has_meta_and_data_keys()
+    public function test_playlist_collection_with_pagination_has_meta_and_data_keys() : void
     {
         $playlists = factory(Playlist::class, 10)->create();
 
