@@ -3,13 +3,13 @@
 namespace App\Providers;
 
 use Spotify\Http\Request;
-use Spotify\Auth\Credentials;
 use Illuminate\Session\Store;
+use Spotify\Auth\Credentials;
+use Spotify\Auth\Authenticator;
 use Spotify\Contracts\Store\Session;
 use Illuminate\Support\ServiceProvider;
-use Spotify\Auth\Flows\ClientCredentials;
-use Spotify\Contracts\Auth\Authenticator;
 use Spotify\Sessions\LaravelSessionHandler;
+use Spotify\Contracts\Auth\Authenticator as AuthInterface;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -40,8 +40,8 @@ class AppServiceProvider extends ServiceProvider
         });
 
         // Bind Client Credentials to the Spotify authenticator.
-        $this->app->bind(Authenticator::class, function ($app) {
-            return new ClientCredentials(
+        $this->app->bind(AuthInterface::class, function ($app) {
+            return new Authenticator(
                 $app->make(Request::class),
                 $app->make(Credentials::class)
             );
