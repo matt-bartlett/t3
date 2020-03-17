@@ -29,7 +29,7 @@ class PlaylistTransformerTest extends TestCase
 
         $result = $this->transformer->transform($playlist);
 
-        $this->assertInternalType('array', $result);
+        $this->assertIsArray($result);
         $this->assertEquals('1196791157', $result['owner_id']);
         $this->assertEquals('Uplifting Trance', $result['name']);
 

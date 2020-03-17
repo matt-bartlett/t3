@@ -2,11 +2,11 @@
 
 namespace App\T3\Services;
 
-use DB;
 use Exception;
 use App\Models\Track;
 use App\Models\Playlist;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Requests\SpotifyPlaylistRequest;
 use Spotify\Resources\Playlist as SpotfiyPlaylist;
 use App\T3\Spotify\Transformers\PlaylistTransformer;
