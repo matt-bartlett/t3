@@ -2,10 +2,10 @@
 
 namespace Tests\Unit\Services;
 
-use DB;
 use Tests\TestCase;
 use App\Models\Track;
 use App\Models\Playlist;
+use Illuminate\Support\Facades\DB;
 use App\T3\Services\CreatePlaylistService;
 use App\Http\Requests\SpotifyPlaylistRequest;
 use Spotify\Resources\Playlist as SpotfiyPlaylist;
@@ -73,7 +73,7 @@ class CreatePlaylistServiceTest extends TestCase
 
         $playlist = $this->service->handle($spotifyPlaylistRequestMock);
 
-        $this->assertInternalType('array', $playlist);
+        $this->assertIsArray($playlist);
         $this->assertEquals('Uplifting Trance', $playlist['name']);
     }
 

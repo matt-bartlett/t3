@@ -1,0 +1,39 @@
+version: '3.4'
+services:
+    php:
+        container_name: php
+        build: ./docker/php
+        volumes:
+            - .:/var/www/html
+        networks:
+            - t3-network
+    nginx:
+        container_name: nginx
+        image: nginx:alpine
+        ports:
+            - 8080:80
+        volumes:
+            - ./:/var/www/html
+            - ./docker/nginx/config:/etc/nginx/conf.d
+        networks:
+            - t3-network
+    db:
+        container_name: db
+        image: mysql:5.7
+        ports:
+            - 3306:3306
+        volumes:
+            - dbdata:/var/lib/mysql/
+        environment:
+            MYSQL_DATABASE: t3
+            MYSQL_USER: homestead
+            MYSQL_PASSWORD: secret
+            MYSQL_ROOT_PASSWORD: root
+        networks:
+            - t3-network
+networks:
+    t3-network:
+        driver: bridge
+volumes:
+    dbdata:
+        driver: local

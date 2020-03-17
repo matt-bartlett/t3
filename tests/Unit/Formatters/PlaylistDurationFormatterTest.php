@@ -34,8 +34,8 @@ class PlaylistDurationFormatterTest extends TestCase
 
         $duration = $this->formatter->format($tracks);
 
+        $this->assertIsInt($duration);
         $this->assertEquals(16, $duration);
-        $this->assertInternalType('integer', $duration);
     }
 
     /**
